@@ -373,7 +373,6 @@ public:
 
 	static std::map<uint64_t, bool> KeyMapping;
 	static bool usingKey(uint64_t);
-	static MC_Colour MakeRainbow(MC_Colour Sexsexsex);
 };
 
 class RenderUtils {
