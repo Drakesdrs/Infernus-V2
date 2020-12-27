@@ -10,6 +10,7 @@ std::vector<std::string> ClientManager::Categories;
 #include "Hooks/GameMode.h"
 #include "Hooks/LoopbackPacketSender.h"
 #include "Hooks/KeyItem.h"
+#include "Hooks/MouseItem.h"
 
 /* Minecraft */
 ClientInstance* Minecraft::CachedInstance = nullptr; //Resolve error on compile
@@ -29,6 +30,7 @@ void ClientManager::InitHooks() {
 		Hooks.push_back(new GameMode_Hook());
 		Hooks.push_back(new LoopbackPacketSender_Hook());
 		Hooks.push_back(new KeyItem());
+		Hooks.push_back(new MouseItem());
 	}
 
 	Utils::DebugLogOutput("Initializing Hooks...");
@@ -47,7 +49,7 @@ void ClientManager::InitHooks() {
 #include "Modules/AutoSprint.h"
 #include "Modules/Jesus.h"
 /* Player */
-//
+#include "Modules/ClickTP.h"
 /* Visuals */
 #include "Modules/TabGUI.h"
 /* World */
@@ -70,6 +72,8 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Jetpack());
 	Modules.push_back(new AutoSprint());
 	Modules.push_back(new Jesus());
+	/* Player */
+	Modules.push_back(new ClickTP());
 	/* Visuals */
 	Modules.push_back(new TabGUI());
 	/* World */

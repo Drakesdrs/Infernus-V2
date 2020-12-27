@@ -17,6 +17,7 @@ public:
 	virtual void onRender() {};
 	virtual void onGmTick() {};
 	virtual void onKey(uint64_t key, bool isDown, bool* cancel) {};
+	virtual void onMouse(char action, bool isDown, bool* cancel) {};
 
 	virtual void onPacket(PacketType type, void* Packet, bool* cancel) {};
 
