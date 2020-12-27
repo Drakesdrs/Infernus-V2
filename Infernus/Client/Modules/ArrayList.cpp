@@ -15,8 +15,21 @@ void Arraylist::onRender() {
 		XP = sortstuff(XP);
 
 		//render stuff idk
-		for (int i = 0; i < XP.size(); i++) {
-			RenderUtils::RenderText(XP.at(i)->name  + ((XP.at(i)->State != "") ? " [" + XP.at(i)->State + "]" : ""), Vec2(200, 10 + i * 10), MC_Colour(255, 255, 255), 1.0f, 1.0f);
+		if (XP.size() > 0) {
+			MC_Colour colour(255, 255, 255);
+			int Screensize = 400; //here screen size
+			int lol = 0, lol1 = RenderUtils::GetTextWidth(XP.at(0)->name + ((XP.at(0)->State != "") ? " [" + XP.at(0)->State + "]" : ""), 1);
+			RenderUtils::FillRectangle(Vec4(Screensize - lol1 - 2, 9, Screensize + 1, 10), colour, 1.0f); //top
+			for (; lol < XP.size(); lol++) {
+				int lol2 = RenderUtils::GetTextWidth(XP.at(lol)->name + ((XP.at(lol)->State != "") ? " [" + XP.at(lol)->State + "]" : ""), 1);
+				int lol3 = 0;
+				if (lol + 1 < XP.size()) { lol3 = RenderUtils::GetTextWidth(XP.at(lol + 1)->name + ((XP.at(lol + 1)->State != "") ? " [" + XP.at(lol + 1)->State + "]" : ""), 1); }
+				else { lol3 = 0; }
+				RenderUtils::RenderText(XP.at(lol)->name + ((XP.at(lol)->State != "") ? " [" + XP.at(lol)->State + "]" : ""), Vec2(Screensize - lol2, 10 + lol * 10), colour, 1.0f, 1.0f);
+				RenderUtils::FillRectangle(Vec4(Screensize - lol2 - 2, 10 + lol * 10, Screensize - lol2 - 1, 20 + lol * 10), colour, 1.0f); // left
+				RenderUtils::FillRectangle(Vec4(Screensize - lol2 - 2, 20 + lol * 10, Screensize - lol3 - 1, 21 + lol * 10), colour, 1.0f); // bottom
+			}
+			RenderUtils::FillRectangle(Vec4(Screensize, 9, Screensize + 1, 10 + lol * 10), colour, 1.0f); //right
 		}
 	}
 
