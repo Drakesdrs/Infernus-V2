@@ -24,6 +24,7 @@ public:
 	virtual void onPacket(PacketType type, void* Packet, bool* cancel) {};
 
 	virtual void onStartDestroyBlock(GameMode* GM, Vec3_i* blockPos, uint8_t blockFace) {};
+	virtual void onPlayerAttack(LocalPlayer* attacker, Actor* victim) {};
 };
 
 class Hook {
