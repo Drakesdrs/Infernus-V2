@@ -20,7 +20,6 @@ bool IsImmobile_Callback(Actor* Entity) {
 void Actor_Hooks::Install() {
 	uintptr_t ActorVTable_Addr = Utils::FindSig("48 8D ?? ?? ?? ?? ?? 48 89 01 44 88 79 ?? 44 88 79 ??");
 	if (ActorVTable_Addr) {
-		Utils::DebugLogOutput("\n"); //New Line
 		Utils::DebugLogOutput("Successfully found address needed for Actor Hooks!");
 		int offset = *reinterpret_cast<int*>(ActorVTable_Addr + 3);
 		uintptr_t** VTable = reinterpret_cast<uintptr_t**>(ActorVTable_Addr + offset + 7);
@@ -39,5 +38,4 @@ void Actor_Hooks::Install() {
 	else {
 		Utils::DebugLogOutput("Failed to find address needed for the Actor Hooks!");
 	}
-	Utils::DebugLogOutput("\n"); //New Line
 }

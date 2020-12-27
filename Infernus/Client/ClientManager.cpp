@@ -42,6 +42,7 @@ void ClientManager::InitHooks() {
 
 	for (int I = 0; I < Hooks.size(); I++) { //Initialize the hooks
 		Hooks.at(I)->Install();
+		Utils::DebugLogOutput("\n"); //New Line
 	}
 }
 
