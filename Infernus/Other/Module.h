@@ -8,6 +8,8 @@ public:
 	bool isEnabled = false, wasEnabled = false;
 	Module(std::string name, std::string category, std::string description, uint64_t key = NULL);
 	
+	std::string State = "";
+
 	void onBaseTick();
 	virtual void onLoop() {};
 	virtual void onTick() {};

@@ -16,7 +16,7 @@ void Arraylist::onRender() {
 
 		//render stuff idk
 		for (int i = 0; i < XP.size(); i++) {
-			RenderUtils::RenderText(XP.at(i)->name, Vec2(200, 10 + i * 10), MC_Colour(255, 255, 255), 1.0f, 1.0f);
+			RenderUtils::RenderText(XP.at(i)->name  + ((XP.at(i)->State != "") ? " [" + XP.at(i)->State + "]" : ""), Vec2(200, 10 + i * 10), MC_Colour(255, 255, 255), 1.0f, 1.0f);
 		}
 	}
 
@@ -28,9 +28,9 @@ std::vector<Module*> Arraylist::sortstuff(std::vector<Module*> lol) {
 	while (changed) {
 		changed = false;
 		for (int i = 0; i < lol.size() - 1; i++) {
-			if (RenderUtils::GetTextWidth(lol.at(i)->name,1.0f) < RenderUtils::GetTextWidth(lol.at(i + 1)->name,1.0f)) {
-				Module * tmp = lol.at(i);
-				
+			if (RenderUtils::GetTextWidth(lol.at(i)->name + lol.at(i)->State, 1.0f) < RenderUtils::GetTextWidth(lol.at(i + 1)->name + lol.at(i + 1)->State, 1.0f)) {
+				Module* tmp = lol.at(i);
+
 				lol.at(i) = lol.at(i + 1);
 				lol.at(i + 1) = tmp;
 				changed = true;
