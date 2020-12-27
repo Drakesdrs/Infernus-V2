@@ -154,6 +154,7 @@
   <ItemGroup>
     <ClCompile Include="Client\ClientManager.cpp" />
     <ClCompile Include="Client\Modules\AirJump.cpp" />
+    <ClCompile Include="Client\Modules\Arraylol.cpp" />
     <ClCompile Include="Client\Modules\AutoSprint.cpp" />
     <ClCompile Include="Client\Modules\ClickTP.cpp" />
     <ClCompile Include="Client\Modules\Freecam.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="Client\Hooks\MouseItem.h" />
     <ClInclude Include="Client\Hooks\RenderContext.h" />
     <ClInclude Include="Client\Modules\AirJump.h" />
+    <ClInclude Include="Client\Modules\Arraylol.h" />
     <ClInclude Include="Client\Modules\AutoSprint.h" />
     <ClInclude Include="Client\Modules\ClickTP.h" />
     <ClInclude Include="Client\Modules\Freecam.h" />

@@ -58,6 +58,7 @@ void ClientManager::InitHooks() {
 #include "Modules/ClickTP.h"
 /* Visuals */
 #include "Modules/TabGUI.h"
+#include "Modules/Arraylol.h"
 /* World */
 #include "Modules/Instabreak.h"
 #include "Modules/Nuker.h"
@@ -82,6 +83,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new ClickTP());
 	/* Visuals */
 	Modules.push_back(new TabGUI());
+	Modules.push_back(new Arraylist());
 	/* World */
 	Modules.push_back(new Instabreak());
 	Modules.push_back(new Nuker());
