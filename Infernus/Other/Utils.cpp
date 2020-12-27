@@ -189,3 +189,35 @@ void RenderUtils::DrawRectangle(Vec4 position, MC_Colour colour, float alpha, fl
 		FillRectangle(Vec4(position.x - lineWidth, position.w - lineWidth, position.z + lineWidth, position.w + lineWidth), colour, alpha);
 	}
 }
+
+//oh god this is cancer
+MC_Colour Utils::MakeRainbow(MC_Colour Sexsexsex) {
+	static int XD = 0;
+	XD++;
+	MC_Colour returncolour = Sexsexsex;
+	returncolour.r = min(returncolour.r, 255);
+	returncolour.g = min(returncolour.g, 255);
+	returncolour.b = min(returncolour.b, 255);
+
+	switch (XD) {
+	case 1:
+		returncolour.r++;
+		break;
+	case 2:
+		returncolour.g++;
+		break;
+	case 3:
+		returncolour.b++;
+		break;
+	case 4:
+		XD = 0;
+		returncolour.r++;
+		break;
+	}
+
+	if (returncolour.r > 255) returncolour.r = 0;
+	if (returncolour.g > 255) returncolour.g = 0;
+	if (returncolour.b > 255) returncolour.b = 0;
+
+	return returncolour;
+}

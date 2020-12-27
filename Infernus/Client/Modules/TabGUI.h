@@ -11,4 +11,5 @@ public:
 private:
 	int currentCategory = 0, currentModule = 0;
 	bool selectedCategory = false, selectedModule = 0;
+	MC_Colour XD = MC_Colour(0, 0, 0); //255, 127, 0
 };
