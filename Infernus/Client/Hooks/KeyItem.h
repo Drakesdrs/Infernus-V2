@@ -13,7 +13,14 @@ void KeyItemCallback(uint64_t key, bool isDown) {
 	Utils::KeyMapping[key] = isDown;
 	bool cancel = false;
 	for (auto Module : ClientManager::Modules) {
-		if (Module->isEnabled) Module->onKey(key, isDown, &cancel);
+		if (Minecraft::ClientInstance()->MinecraftGame()->canUseKeys() && isDown) {
+			if (Module->key == key) {
+				Module->isEnabled = !Module->isEnabled;
+			}
+		}
+		if (Module->isEnabled) {
+			Module->onKey(key, isDown, &cancel);
+		}
 	}
 	if(!cancel) _AVKeyItem(key, isDown);
 }
