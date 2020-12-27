@@ -6,7 +6,7 @@ public:
 	void Install();
 };
 
-typedef void(__fastcall* IsImmobile)(Actor*);
+typedef bool(__fastcall* IsImmobile)(Actor*);
 IsImmobile _IsImmobile;
 
 bool IsImmobile_Callback(Actor* Entity) {
@@ -14,6 +14,7 @@ bool IsImmobile_Callback(Actor* Entity) {
 	if (Entity != nullptr && myPlayer != nullptr && myPlayer == Entity) {
 		return false; //Default disable immobility state
 	}
+	return _IsImmobile(Entity);
 }
 
 void Actor_Hooks::Install() {
