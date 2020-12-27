@@ -24,7 +24,7 @@ void Arraylist::onRender() {
 				int lol2 = RenderUtils::GetTextWidth(XP.at(lol)->name + ((XP.at(lol)->State != "") ? " [" + XP.at(lol)->State + "]" : ""), 1);
 				int lol3 = 0;
 				if (lol + 1 < XP.size()) { lol3 = RenderUtils::GetTextWidth(XP.at(lol + 1)->name + ((XP.at(lol + 1)->State != "") ? " [" + XP.at(lol + 1)->State + "]" : ""), 1); }
-				else { lol3 = 0; }
+				else { lol3 = -2; }
 				RenderUtils::RenderText(XP.at(lol)->name + ((XP.at(lol)->State != "") ? " [" + XP.at(lol)->State + "]" : ""), Vec2(Screensize - lol2, 10 + lol * 10), colour, 1.0f, 1.0f);
 				RenderUtils::FillRectangle(Vec4(Screensize - lol2 - 2, 10 + lol * 10, Screensize - lol2 - 1, 20 + lol * 10), colour, 1.0f); // left
 				RenderUtils::FillRectangle(Vec4(Screensize - lol2 - 2, 20 + lol * 10, Screensize - lol3 - 1, 21 + lol * 10), colour, 1.0f); // bottom
