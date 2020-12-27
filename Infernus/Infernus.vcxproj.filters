@@ -72,6 +72,9 @@
     <ClCompile Include="Client\Modules\ClickTP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Client\Modules\Triggerbot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDK\Minecraft.h">
@@ -177,6 +180,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Client\Hooks\Actor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Client\Modules\Triggerbot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

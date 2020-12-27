@@ -49,6 +49,7 @@ void ClientManager::InitHooks() {
 /* Combat */
 #include "Modules/Killaura.h"
 #include "Modules/Hitbox.h"
+#include "Modules/Triggerbot.h"
 /* Movement */
 #include "Modules/AirJump.h"
 #include "Modules/Jetpack.h"
@@ -73,6 +74,7 @@ void ClientManager::InitModules() {
 	/* Combat */
 	Modules.push_back(new Killaura());
 	Modules.push_back(new Hitbox());
+	Modules.push_back(new Triggerbot());
 	/* Movement */
 	Modules.push_back(new AirJump());
 	Modules.push_back(new Jetpack());
