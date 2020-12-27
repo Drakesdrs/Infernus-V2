@@ -3,7 +3,8 @@
 enum class PacketType {
 	Unknown,
 	Movement,
-	AuthInput
+	AuthInput,
+	Text
 };
 
 class Packet {
