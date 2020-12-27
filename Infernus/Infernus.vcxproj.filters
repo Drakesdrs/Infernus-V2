@@ -72,7 +72,10 @@
     <ClCompile Include="Client\Modules\ClickTP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Client\Modules\Arraylol.cpp">
+    <ClCompile Include="Client\Modules\Triggerbot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Client\Modules\ArrayList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -182,7 +185,10 @@
     <ClInclude Include="Client\Hooks\Actor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Client\Modules\Arraylol.h">
+    <ClInclude Include="Client\Modules\Triggerbot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Client\Modules\ArrayList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
