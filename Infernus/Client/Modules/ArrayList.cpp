@@ -17,7 +17,7 @@ void Arraylist::onRender() {
 		//render stuff idk
 		if (XP.size() > 0) {
 			MC_Colour colour(255, 255, 255);
-			int Screensize = 950; //here screen size
+			int Screensize = 500; //here screen size
 			int lol = 0, lol1 = RenderUtils::GetTextWidth(XP.at(0)->name + ((XP.at(0)->State != "") ? " [" + XP.at(0)->State + "]" : ""), 1);
 			RenderUtils::FillRectangle(Vec4(Screensize - lol1 - 2, 9, Screensize + 1, 10), colour, 1.0f); //top
 			for (; lol < XP.size(); lol++) {
