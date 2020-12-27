@@ -80,7 +80,7 @@ void TabGUI::onKey(uint64_t key, bool isDown, bool* cancel) {
 				}
 				else {
 					Module* currModule = Modules.at(currentModule);
-					if (currModule != nullptr) currModule->isEnabled = !currModule->isEnabled;
+					if (currModule != nullptr) currModule->toggle();
 				}
 			}
 			*cancel = true;
