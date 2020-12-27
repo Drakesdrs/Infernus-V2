@@ -11,6 +11,7 @@ std::vector<Command*> ClientManager::Commands;
 #include "Hooks/ClientInstance.h"
 #include "Hooks/RenderContext.h"
 #include "Hooks/GameMode.h"
+#include "Hooks/Actor.h"
 #include "Hooks/LoopbackPacketSender.h"
 #include "Hooks/KeyItem.h"
 #include "Hooks/MouseItem.h"
@@ -31,6 +32,7 @@ void ClientManager::InitHooks() {
 		Hooks.push_back(new ClientInstance_Hook());
 		Hooks.push_back(new RenderContext());
 		Hooks.push_back(new GameMode_Hook());
+		Hooks.push_back(new Actor_Hooks());
 		Hooks.push_back(new LoopbackPacketSender_Hook());
 		Hooks.push_back(new KeyItem());
 		Hooks.push_back(new MouseItem());
