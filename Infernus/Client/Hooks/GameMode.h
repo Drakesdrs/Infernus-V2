@@ -80,7 +80,7 @@ void GameMode_Hook::Install() {
 	}
 	/* SurvivalMode */
 	{
-		uintptr_t sigAddr = Utils::FindSig("48 89 5C 24 ?? 48 89 74 24 ?? 55 57 41 56 48 8D 6C 24 B9 48 81 ?? ?? ?? ?? ?? 48 8B 05 0F F3 8A 01");
+		uintptr_t sigAddr = Utils::FindSig("48 89 5C 24 ?? 48 89 74 24 ?? 55 57 41 56 48 8D ?? ?? ?? 48 81 ?? ?? ?? ?? ?? 48 8B 05 0F F3 8A 01 48 33 C4");
 		if (sigAddr) {
 			Utils::DebugLogOutput("Successfully found address needed for SurvivalMode::tick Hook, Preparing Hook Install...");
 			if (MH_CreateHook((void*)sigAddr, &SmTickCallback, reinterpret_cast<LPVOID*>(&_SmTick)) == MH_OK) {
