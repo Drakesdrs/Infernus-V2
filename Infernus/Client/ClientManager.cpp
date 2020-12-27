@@ -17,6 +17,7 @@ GameMode* Minecraft::CachedGameMode = nullptr; //Resolve error on compile
 /* Packet */
 uint64_t Packet::MovePlayerPacket_Addr = 0x0;
 uint64_t Packet::PlayerAuthPacket_Addr = 0x0;
+uint64_t Packet::TextPacket_Addr = 0x0;
 /* Other */
 std::vector<std::string> Minecraft::Friends = { "EchoHackCmd", "bricker1462" };
 
