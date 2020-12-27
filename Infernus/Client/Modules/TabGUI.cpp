@@ -22,9 +22,7 @@ std::vector<std::string> SortArrayOfStrings(std::vector<std::string> stringVecAr
 };
 
 void TabGUI::onRender() {
-	XD = Utils::MakeRainbow(XD);
-	RenderUtils::RenderText("Infernus", Vec2(22 , 20), XD, 1.0f, 1.0f);
-
+	RenderUtils::RenderText("Infernus", Vec2(22, 20), MC_Colour(255, 128, 0), 1.0f, 1.0f);
 	if (Minecraft::ClientInstance() != nullptr && Minecraft::ClientInstance()->MinecraftGame()->canUseKeys()) {
 		auto Categories = ClientManager::Categories;
 		auto Modules = ClientManager::GetModulesFromCategory(Categories.at(currentCategory));
