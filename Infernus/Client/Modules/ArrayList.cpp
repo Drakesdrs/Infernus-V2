@@ -8,7 +8,7 @@ void Arraylist::onRender() {
 		for (int i = 0; i < Categories.size(); i++) {
 			auto Modules = ClientManager::GetModulesFromCategory(Categories.at(i));
 			for (auto Mod : Modules) {
-				if (Mod->isEnabled) XP.push_back(Mod);
+				if (Mod->isEnabled || Mod->Animating) XP.push_back(Mod);
 			}
 		}
 
@@ -19,22 +19,39 @@ void Arraylist::onRender() {
 			MC_Colour colour(255, 255, 255);
 			int Screensize = 400; //here screen size
 			int lol = 0, lol1 = RenderUtils::GetTextWidth(XP.at(0)->name + ((XP.at(0)->State != "") ? " [" + XP.at(0)->State + "]" : ""), 1);
-			RenderUtils::FillRectangle(Vec4(Screensize - lol1 - 2, 9, Screensize + 1, 10), colour, 1.0f); //top
+			//RenderUtils::FillRectangle(Vec4(Screensize - lol1 - 2, 9, Screensize + 1, 10), colour, 1.0f); //top
 			for (; lol < XP.size(); lol++) {
 				int lol2 = RenderUtils::GetTextWidth(XP.at(lol)->name + ((XP.at(lol)->State != "") ? " [" + XP.at(lol)->State + "]" : ""), 1), lol3 = 0;
-				if (lol + 1 < XP.size()) { lol3 = RenderUtils::GetTextWidth(XP.at(lol + 1)->name + ((XP.at(lol + 1)->State != "") ? " [" + XP.at(lol + 1)->State + "]" : ""), 1); } else { lol3 = -2; }
-				RenderUtils::FillRectangle(Vec4(Screensize - lol2, 10 + lol * 10, Screensize, 20 + lol * 10), MC_Colour(0, 0, 0), 0.5f); //back
-				
-				RenderUtils::RenderText(XP.at(lol)->name + ((XP.at(lol)->State != "") ? " [" + XP.at(lol)->State + "]" : ""), Vec2(Screensize - lol2, 10 + lol * 10), colour, 1.0f, 1.0f);
-				RenderUtils::FillRectangle(Vec4(Screensize - lol2 - 2, 10 + lol * 10, Screensize - lol2 - 1, 20 + lol * 10), colour, 1.0f); // left
-				RenderUtils::FillRectangle(Vec4(Screensize - lol2 - 2, 20 + lol * 10, Screensize - lol3 - 1, 21 + lol * 10), colour, 1.0f); // bottom
+
+				if (XP.at(lol)->Animating) {
+					int AnimOffset = lol2 * XP.at(lol)->AnimateProgress / 75;
+
+					if (XP.at(lol)->closing)
+						XP.at(lol)->AnimateProgress--;
+					else
+						XP.at(lol)->AnimateProgress++;
+
+					if (XP.at(lol)->closing && XP.at(lol)->AnimateProgress < 0)
+						XP.at(lol)->Animating = false;
+					if (!XP.at(lol)->closing && XP.at(lol)->AnimateProgress > 75)
+						XP.at(lol)->Animating = false;
+
+					RenderUtils::RenderText(XP.at(lol)->name + ((XP.at(lol)->State != "") ? " [" + XP.at(lol)->State + "]" : ""), Vec2(Screensize - AnimOffset, 10 + lol * 10), colour, 1.0f, 1.0f);
+
+				}
+				else
+					RenderUtils::RenderText(XP.at(lol)->name + ((XP.at(lol)->State != "") ? " [" + XP.at(lol)->State + "]" : ""), Vec2(Screensize - lol2, 10 + lol * 10), colour, 1.0f, 1.0f);
+
+				//if (lol + 1 < XP.size()) { lol3 = RenderUtils::GetTextWidth(XP.at(lol + 1)->name + ((XP.at(lol + 1)->State != "") ? " [" + XP.at(lol + 1)->State + "]" : ""), 1); } else { lol3 = -2; }
+				//RenderUtils::FillRectangle(Vec4(Screensize - lol2, 10 + lol * 10, Screensize, 20 + lol * 10), MC_Colour(0, 0, 0), 0.5f); //back
+				//RenderUtils::FillRectangle(Vec4(Screensize - lol2 - 2, 10 + lol * 10, Screensize - lol2 - 1, 20 + lol * 10), colour, 1.0f); // left
+				//RenderUtils::FillRectangle(Vec4(Screensize - lol2 - 2, 20 + lol * 10, Screensize - lol3 - 1, 21 + lol * 10), colour, 1.0f); // bottom
 			}
-			RenderUtils::FillRectangle(Vec4(Screensize, 9, Screensize + 1, 10 + lol * 10), colour, 1.0f); //right
-			RenderUtils::FlushText();
+			//RenderUtils::FillRectangle(Vec4(Screensize, 9, Screensize + 1, 10 + lol * 10), colour, 1.0f); //right
 		}
+
+		XP.clear();
 	}
-
-
 }
 
 std::vector<Module*> Arraylist::sortstuff(std::vector<Module*> lol) {

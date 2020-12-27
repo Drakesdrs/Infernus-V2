@@ -12,10 +12,13 @@ void Module::onBaseTick() {
 	if (wasEnabled != isEnabled) {
 		if (isEnabled) {
 			onEnable();
+			closing = false;
 		}
 		else {
 			onDisable();
+			closing = true;
 		}
+		Animating = true;
 		wasEnabled = isEnabled;
 		Minecraft::ClientInstance()->clientMessage(this->name + " " + std::string(isEnabled ? "Enabled" : "Disabled"));
 	}

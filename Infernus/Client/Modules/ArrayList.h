@@ -4,7 +4,7 @@
 
 class Arraylist : public Module {
 public:
-	Arraylist() : Module::Module("Arraylist", "Visuals", "Show enabled modules in a very epic way") {};
+	Arraylist() : Module::Module("Arraylist", "Visuals", "Show enabled modules in a very epic way") { this->isEnabled = true; };
 	void onRender();
 	std::vector<Module*> sortstuff(std::vector<Module*> lol);
 };
