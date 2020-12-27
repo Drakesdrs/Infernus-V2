@@ -1,4 +1,4 @@
-#include "Arraylol.h"
+#include "ArrayList.h"
 
 void Arraylist::onRender() {
 

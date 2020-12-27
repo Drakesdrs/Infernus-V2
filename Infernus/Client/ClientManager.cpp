@@ -59,7 +59,7 @@ void ClientManager::InitHooks() {
 #include "Modules/ClickTP.h"
 /* Visuals */
 #include "Modules/TabGUI.h"
-#include "Modules/Arraylol.h"
+#include "Modules/ArrayList.h"
 /* World */
 #include "Modules/Instabreak.h"
 #include "Modules/Nuker.h"
