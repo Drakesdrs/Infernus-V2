@@ -46,6 +46,16 @@ void DestroyBlockCallback(GameMode* GM, Vec3_i* blockPos, uint8_t blockFace, voi
 	_StartDestroyBlock(GM, blockPos, blockFace, a4, a5);
 }
 
+typedef void(__fastcall* Attack)(GameMode*, Actor*);
+Attack _Attack;
+
+void AttackCallback(GameMode* GM, Actor* Entity) {
+	for (auto Module : ClientManager::Modules) {
+		if (Module->isEnabled) Module->onPlayerAttack(GM->Player, Entity);
+	}
+	_Attack(GM, Entity);
+}
+
 void GameMode_Hook::Install() {
 	/* GameMode */
 	{
@@ -76,6 +86,20 @@ void GameMode_Hook::Install() {
 		}
 		else {
 			Utils::DebugLogOutput("Failed to find address needed for GameMode::onStartDestroyBlock Hook!");
+		}
+		uintptr_t attackAddr = Utils::FindSig("80 B9 ? ? ? ? ? 74 0C 80 3D ? ? ? ? ? 74 03 32 C0 C3");
+		if (attackAddr) {
+			Utils::DebugLogOutput("Successfully found address needed for GameMode::attack Hook, Preparing Hook Install...");
+			if (MH_CreateHook((void*)attackAddr, &AttackCallback, reinterpret_cast<LPVOID*>(&_Attack)) == MH_OK) {
+				Utils::DebugLogOutput("Successfully created GameMode::attack Hook, Enabling Hook...");
+				MH_EnableHook((void*)attackAddr);
+			}
+			else {
+				Utils::DebugLogOutput("Failed to create GameMode::attack Hook!");
+			}
+		}
+		else {
+			Utils::DebugLogOutput("Failed to find address needed for GameMode::attack Hook!");
 		}
 	}
 	/* SurvivalMode */
