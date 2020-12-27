@@ -161,6 +161,7 @@
     <ClCompile Include="Client\Modules\Jetpack.cpp" />
     <ClCompile Include="Client\Modules\Killaura.cpp" />
     <ClCompile Include="Client\Modules\NoPacket.cpp" />
+    <ClCompile Include="Client\Modules\Spammer.cpp" />
     <ClCompile Include="Client\Modules\TabGUI.cpp" />
     <ClCompile Include="Client\Modules\TestModule.cpp" />
     <ClCompile Include="Client\Modules\Uninject.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="Client\Modules\Jetpack.h" />
     <ClInclude Include="Client\Modules\Killaura.h" />
     <ClInclude Include="Client\Modules\NoPacket.h" />
+    <ClInclude Include="Client\Modules\Spammer.h" />
     <ClInclude Include="Client\Modules\TabGUI.h" />
     <ClInclude Include="Client\Modules\TestModule.h" />
     <ClInclude Include="Client\Modules\Uninject.h" />

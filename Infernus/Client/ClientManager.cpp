@@ -55,6 +55,7 @@ void ClientManager::InitHooks() {
 /* Other */
 #include "Modules/TestModule.h"
 #include "Modules/NoPacket.h"
+#include "Modules/Spammer.h"
 #include "Modules/Uninject.h"
 
 void ClientManager::InitModules() {
@@ -73,6 +74,7 @@ void ClientManager::InitModules() {
 	/* Other */
 	Modules.push_back(new TestModule());
 	Modules.push_back(new NoPacket());
+	Modules.push_back(new Spammer());
 	Modules.push_back(new Uninject());
 
 	for (int I = 0; I < Modules.size(); I++) { //Initialize Categories

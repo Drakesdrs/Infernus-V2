@@ -53,6 +53,13 @@ public:
 		}
 		return true;
 	};
+	void clientMessage(std::string output) {
+		class LocalPlayer* Player = this->LocalPlayer();
+		if (Player != nullptr) {
+			TextHolder msg(output);
+			Player->displayTextObjectMessage(&msg);
+		}
+	}
 };
 
 class BitmapFont {

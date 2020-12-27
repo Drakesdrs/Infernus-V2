@@ -127,7 +127,7 @@ public:
 	virtual void Function383();
 	virtual void Function384();
 	virtual void Function385();
-	virtual void Function386();
+	virtual void displayTextObjectMessage(class TextHolder*);
 	virtual void Function387();
 	virtual void Function388();
 	virtual void Function389();

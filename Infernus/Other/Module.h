@@ -27,3 +27,14 @@ class Hook {
 public:
 	virtual void Install() {};
 };
+
+class Command {
+public:
+	std::string input, description;
+	Command(std::string input, std::string description) {
+		this->input = input;
+		this->description = description;
+	}
+	virtual void execute(std::string input, std::vector<std::string> words) {};
+	virtual void respond(std::string output);
+};
