@@ -52,6 +52,7 @@ void ClientManager::InitHooks() {
 #include "Modules/TabGUI.h"
 /* World */
 #include "Modules/Instabreak.h"
+#include "Modules/Nuker.h"
 /* Other */
 #include "Modules/TestModule.h"
 #include "Modules/NoPacket.h"
@@ -71,6 +72,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new TabGUI());
 	/* World */
 	Modules.push_back(new Instabreak());
+	Modules.push_back(new Nuker());
 	/* Other */
 	Modules.push_back(new TestModule());
 	Modules.push_back(new NoPacket());
