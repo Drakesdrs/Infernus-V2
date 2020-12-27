@@ -18,6 +18,9 @@ void PacketCallback(LoopbackPacketSender* _this, void* Packet) {
 	if (currVTable == Packet::PlayerAuthPacket()) {
 		type = PacketType::AuthInput;
 	}
+	if (currVTable == Packet::TextPacket()) {
+		type = PacketType::Text;
+	}
 	bool cancelSend = false;
 	for (auto Module : ClientManager::Modules) {
 		if (Module->isEnabled) Module->onPacket(type, Packet, &cancelSend);
