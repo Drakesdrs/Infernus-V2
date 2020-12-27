@@ -53,9 +53,11 @@ void ClientManager::InitHooks() {
 /* World */
 #include "Modules/Instabreak.h"
 #include "Modules/Nuker.h"
+/* Exploits */
+#include "Modules/NoPacket.h"
+#include "Modules/Freecam.h"
 /* Other */
 #include "Modules/TestModule.h"
-#include "Modules/NoPacket.h"
 #include "Modules/Spammer.h"
 #include "Modules/Uninject.h"
 
@@ -73,9 +75,11 @@ void ClientManager::InitModules() {
 	/* World */
 	Modules.push_back(new Instabreak());
 	Modules.push_back(new Nuker());
+	/* Exploits */
+	Modules.push_back(new NoPacket());
+	Modules.push_back(new Freecam());
 	/* Other */
 	Modules.push_back(new TestModule());
-	Modules.push_back(new NoPacket());
 	Modules.push_back(new Spammer());
 	Modules.push_back(new Uninject());
 
