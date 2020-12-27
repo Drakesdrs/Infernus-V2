@@ -31,6 +31,10 @@ public:
 	void setState(std::string newState) {
 		this->State = newState;
 	}
+
+	void toggle() {
+		this->isEnabled = !this->isEnabled;
+	}
 };
 
 class Hook {
