@@ -20,3 +20,7 @@ void Module::onBaseTick() {
 	}
 	if (isEnabled) onTick();
 }
+
+void Command::respond(std::string output) {
+	Minecraft::ClientInstance()->clientMessage(output);
+}

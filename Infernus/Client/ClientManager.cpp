@@ -1,9 +1,12 @@
 #include "ClientManager.h"
 #include "../Other/Module.h"
 
+std::string ClientManager::CommandPrefix = ".";
+
 std::vector<Hook*> ClientManager::Hooks;
 std::vector<Module*> ClientManager::Modules;
 std::vector<std::string> ClientManager::Categories;
+std::vector<Command*> ClientManager::Commands;
 
 #include "Hooks/ClientInstance.h"
 #include "Hooks/RenderContext.h"
@@ -119,4 +122,36 @@ std::vector<class Module*> ClientManager::GetModulesFromCategory(std::string Cat
 	else {
 		return std::vector<Module*>();
 	}
+}
+
+bool ClientManager::handleCommand(std::string input) {
+	if (input.rfind(CommandPrefix, 0) == 0) {
+		std::string originLower = input;
+		std::for_each(originLower.begin(), originLower.end(), [](char& c) {
+			c = ::tolower(c); //Convert to lower case
+		});
+		originLower.erase(0, CommandPrefix.length()); //Remove prefix from newly lower case converted string
+		std::istringstream iss(originLower);
+		std::vector<std::string> words(std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>());
+
+		bool wasFound = false;
+		std::vector<Command*> cmds = Commands;
+
+		for (int I = 0; I < cmds.size(); I++) {
+			for (int I = 0; I < Commands.size(); I++) {
+				if (Commands.at(I)->input == words.at(0)) {
+					wasFound = true;
+					Commands.at(I)->execute(input, words);
+				}
+				else {
+					if (Commands.at(I) == Commands.back()) {
+						if (!wasFound) Commands.back()->respond("Unknown Command!");
+						wasFound = false;
+					};
+				};
+			};
+			return true;
+		}
+	}
+	return false;
 }

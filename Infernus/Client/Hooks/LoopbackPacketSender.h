@@ -12,6 +12,7 @@ SendToServer _SendToServer;
 void PacketCallback(LoopbackPacketSender* _this, void* Packet) {
 	uint64_t currVTable = *(UINT64*)Packet;
 	PacketType type = PacketType::Unknown;
+	bool cancelSend = false;
 	if (currVTable == Packet::MovePlayerPacket()) {
 		type = PacketType::Movement;
 	}
@@ -19,9 +20,10 @@ void PacketCallback(LoopbackPacketSender* _this, void* Packet) {
 		type = PacketType::AuthInput;
 	}
 	if (currVTable == Packet::TextPacket()) {
+		TextPacket* currPacket = (TextPacket*)Packet;
+		if (ClientManager::handleCommand(currPacket->message.getText())) cancelSend = true;
 		type = PacketType::Text;
 	}
-	bool cancelSend = false;
 	for (auto Module : ClientManager::Modules) {
 		if (Module->isEnabled) Module->onPacket(type, Packet, &cancelSend);
 	}

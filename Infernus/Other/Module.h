@@ -37,5 +37,5 @@ public:
 		this->description = description;
 	}
 	virtual void execute(std::string input, std::vector<std::string> words) {};
-	virtual void respond(std::string output);
+	void respond(std::string output);
 };
