@@ -17,6 +17,7 @@ void Module::onBaseTick() {
 			onDisable();
 		}
 		wasEnabled = isEnabled;
+		Minecraft::ClientInstance()->clientMessage(this->name + " " + std::string(isEnabled ? "Enabled" : "Disabled"));
 	}
 	if (isEnabled) onTick();
 }
