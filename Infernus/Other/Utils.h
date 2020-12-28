@@ -373,6 +373,7 @@ public:
 
 	static std::map<uint64_t, bool> KeyMapping;
 	static bool usingKey(uint64_t);
+	static bool IsInnit(Vec2 MousePos, Vec4 Rectangol);
 };
 
 class RenderUtils {

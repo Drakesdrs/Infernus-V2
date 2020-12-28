@@ -189,3 +189,10 @@ void RenderUtils::DrawRectangle(Vec4 position, MC_Colour colour, float alpha, fl
 		FillRectangle(Vec4(position.x - lineWidth, position.w - lineWidth, position.z + lineWidth, position.w + lineWidth), colour, alpha);
 	}
 }
+
+bool Utils::IsInnit(Vec2 MousePos, Vec4 Rectangol) {
+	if (MousePos.x >= Rectangol.x && MousePos.x <= Rectangol.z && MousePos.y >= Rectangol.y && MousePos.y <= Rectangol.w)
+		return true;
+	else
+		return false;
+}
