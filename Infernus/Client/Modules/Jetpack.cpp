@@ -5,8 +5,8 @@ void Jetpack::onLoop() {
 	MinecraftGame* mcGame = Minecraft::ClientInstance()->MinecraftGame();
 	if (Utils::usingKey(this->key)) {
 		if (Player != nullptr && mcGame != nullptr && mcGame->canUseKeys()) {
-			this->isEnabled = false;
-			this->wasEnabled = false;
+			this->isEnabled = true;
+			this->wasEnabled = true;
 		}
 		else {
 			if (this->isEnabled) {
