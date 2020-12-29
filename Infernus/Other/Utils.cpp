@@ -141,13 +141,18 @@ bool Utils::isStringFloat(std::string str) {
 	return iss.eof() && !iss.fail();
 };
 
+float Utils::randomFloat(int min, int max) {
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_real_distribution<>dis(min, max);
+	return dis(gen);
+}
+
 std::map<uint64_t, bool> Utils::KeyMapping;
 
 bool Utils::usingKey(uint64_t key) {
 	return KeyMapping[key];
 }
-
-
 
 /* Render Utils */
 

@@ -2,7 +2,7 @@
 #include "../Other/Utils.h"
 
 class ClientManager {
-private:
+public:
 	static std::string CommandPrefix;
 public:
 	static void InitHooks();

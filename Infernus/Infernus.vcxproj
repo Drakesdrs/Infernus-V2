@@ -153,6 +153,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Client\ClientManager.cpp" />
+    <ClCompile Include="Client\Commands\SpamCommand.cpp" />
     <ClCompile Include="Client\Commands\SpeedCommand.cpp" />
     <ClCompile Include="Client\Commands\TestCommand.cpp" />
     <ClCompile Include="Client\Modules\AirJump.cpp" />
@@ -180,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client\ClientManager.h" />
+    <ClInclude Include="Client\Commands\SpamCommand.h" />
     <ClInclude Include="Client\Commands\SpeedCommand.h" />
     <ClInclude Include="Client\Commands\TestCommand.h" />
     <ClInclude Include="Client\Hooks\Actor.h" />

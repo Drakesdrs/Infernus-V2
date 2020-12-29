@@ -372,6 +372,7 @@ public:
 	static std::string ptrToStr(uintptr_t);
 
 	static bool isStringFloat(std::string);
+	static float randomFloat(int, int);
 
 	static std::map<uint64_t, bool> KeyMapping;
 	static bool usingKey(uint64_t);

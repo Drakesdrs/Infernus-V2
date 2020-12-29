@@ -90,6 +90,9 @@
     <ClCompile Include="Client\Commands\SpeedCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Client\Commands\SpamCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDK\Minecraft.h">
@@ -213,6 +216,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Client\Commands\SpeedCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Client\Commands\SpamCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
