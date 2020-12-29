@@ -1,9 +1,11 @@
 #include "Module.h"
 
+#include <utility>
+
 Module::Module(std::string name, std::string category, std::string description, uint64_t key) {
-	this->name = name;
-	this->category = category;
-	this->description = description;
+	this->name = std::move(name);
+	this->category = std::move(category);
+	this->description = std::move(description);
 	this->key = key;
 }
 
@@ -26,5 +28,5 @@ void Module::onBaseTick() {
 }
 
 void Command::respond(std::string output) {
-	Minecraft::ClientInstance()->clientMessage(output);
+	Minecraft::ClientInstance()->clientMessage(std::move(output));
 }

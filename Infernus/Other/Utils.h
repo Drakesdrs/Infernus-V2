@@ -15,6 +15,7 @@
 #include <chrono>
 
 #include <map>
+#include <utility>
 
 #include <MinHook.h>
 
@@ -29,7 +30,7 @@ struct Vec2 {
 		struct {
 			float x, y;
 		};
-		float arr[2];
+		float arr[2]{};
 	};
 
 	Vec2() { x = y = 0; }
@@ -37,68 +38,68 @@ struct Vec2 {
 		this->x = x, this->y = y;
 	}
 
-	bool operator == (Vec2 v) { return v.x == x && v.y == y; };
-	bool operator != (Vec2 v) { return v.x != x || v.y != y; };
+	bool operator == (Vec2 v) const { return v.x == x && v.y == y; };
+	bool operator != (Vec2 v) const { return v.x != x || v.y != y; };
 
 	/* Add */
 
-	Vec2 add(float f) {
-		return Vec2(x + f, y + f);
+    [[nodiscard]] Vec2 add(float f) const {
+		return {x + f, y + f};
 	}
 
-	Vec2 add(float a, float b) {
-		return Vec2(x + a, y + b);
+    [[nodiscard]] Vec2 add(float a, float b) const {
+		return {x + a, y + b};
 	}
 
-	Vec2 add(Vec2 o) {
-		return Vec2(x + o.y, y + o.y);
+    [[nodiscard]] Vec2 add(Vec2 o) const {
+		return {x + o.y, y + o.y};
 	}
 
 	/* Subtract */
 
-	Vec2 sub(float f) {
-		return Vec2(x - f, y - f);
+	[[nodiscard]] Vec2 sub(float f) const {
+		return {x - f, y - f};
 	}
 
-	Vec2 sub(float a, float b) {
-		return Vec2(x - a, x - b);
+	[[nodiscard]] Vec2 sub(float a, float b) const {
+		return {x - a, x - b};
 	}
 
-	Vec2 sub(Vec2 o) {
+	[[nodiscard]] Vec2 sub(Vec2 o) const {
 		return Vec2(x - o.x, y - o.y);
 	}
 
 	/* Divide */
 
-	Vec2 div(float f) {
+	[[nodiscard]] Vec2 div(float f) const {
 		return Vec2(x / f, y / f);
 	}
 
-	Vec2 div(float a, float b) {
+    [[nodiscard]] Vec2 div(float a, float b) const {
 		return Vec2(x / a, y / b);
 	}
 
-	Vec2 div(Vec2 o) {
+    [[nodiscard]] Vec2 div(Vec2 o) const {
 		return Vec2(x / o.x, y / o.y);
 	}
 
 	/* Multiply */
 
-	Vec2 mult(float f) {
+	[[nodiscard]] Vec2 mult(float f) const {
 		return Vec2(x * f, y * f);
 	}
 
-	Vec2 mult(float a, float b) {
+	[[nodiscard]] Vec2 mult(float a, float b) const {
 		return Vec2(x * a, y * b);
 	}
 
-	Vec2 mult(Vec2 o) {
+	[[nodiscard]] Vec2 mult(Vec2 o) const {
 		return Vec2(x * o.x, y * o.y);
 	}
 
 	/* Other */
 
-	int distance(Vec2 o) {
+	[[nodiscard]] int distance(Vec2 o) const {
 		int dX = x - o.y;
 		int dY = y - o.y;
 		return sqrt(dX * dX + dY * dY);
@@ -110,7 +111,7 @@ struct Vec3 {
 		struct {
 			float x, y, z;
 		};
-		float arr[3];
+		float arr[3]{};
 	};
 
 	Vec3() { x = y = z = 0; }
@@ -118,88 +119,88 @@ struct Vec3 {
 		this->x = x, this->y = y, this->z = z;
 	}
 
-	bool operator == (Vec3 v) { return v.x == x && v.y == y && v.z == z; };
-	bool operator != (Vec3 v) { return v.x != x || v.y != y || v.z != z; };
+	bool operator == (Vec3 v) const { return v.x == x && v.y == y && v.z == z; };
+	bool operator != (Vec3 v) const { return v.x != x || v.y != y || v.z != z; };
 
 	/* Add */
 
-	Vec3 add(float f) {
+    [[nodiscard]] Vec3 add(float f) const {
 		return Vec3(x + f, y + f, z + f);
 	}
 
-	Vec3 add(float a, float b, float c) {
+    [[nodiscard]] Vec3 add(float a, float b, float c) const {
 		return Vec3(x + a, y + b, z + c);
 	}
 
-	Vec3 add(Vec3 o) {
+    [[nodiscard]] Vec3 add(Vec3 o) const {
 		return Vec3(x + o.y, y + o.y, z + o.z);
 	}
 
 	/* Subtract */
 
-	Vec3 sub(float f) {
+    [[nodiscard]] Vec3 sub(float f) const {
 		return Vec3(x - f, y - f, z - f);
 	}
 
-	Vec3 sub(float a, float b, float c) {
+    [[nodiscard]] Vec3 sub(float a, float b, float c) const {
 		return Vec3(x - a, x - b, z - c);
 	}
 
-	Vec3 sub(Vec3 o) {
+    [[nodiscard]] Vec3 sub(Vec3 o) const {
 		return Vec3(x - o.x, y - o.y, z - o.z);
 	}
 
 	/* Divide */
 
-	Vec3 div(float f) {
+    [[nodiscard]] Vec3 div(float f) const {
 		return Vec3(x / f, y / f, z / f);
 	}
 
-	Vec3 div(float a, float b, float c) {
+    [[nodiscard]] Vec3 div(float a, float b, float c) const {
 		return Vec3(x / a, y / b, z / c);
 	}
 
-	Vec3 div(Vec3 o) {
+    [[nodiscard]] Vec3 div(Vec3 o) const {
 		return Vec3(x / o.x, y / o.y, z / o.y);
 	}
 
 	/* Multiply */
 
-	Vec3 mult(float f) {
+    [[nodiscard]] Vec3 mult(float f) const {
 		return Vec3(x * f, y * f, z * f);
 	}
 
-	Vec3 mult(float a, float b, float c) {
+    [[nodiscard]] Vec3 mult(float a, float b, float c) const {
 		return Vec3(x * a, y * b, z * c);
 	}
 
-	Vec3 mult(Vec3 o) {
+    [[nodiscard]] Vec3 mult(Vec3 o) const {
 		return Vec3(x * o.x, y * o.y, z * o.z);
 	}
 
 	/* Other */
 
-	Vec3 floor() {
+    [[nodiscard]] Vec3 floor() const {
 		return Vec3(floorf(x), floorf(y), floorf(z));
 	}
 
-	float magnitude() {
+    [[nodiscard]] float magnitude() const {
 		return sqrtf(x * x + y * y + z * z);
 	}
 
-	float magnitudexy() {
+    [[nodiscard]] float magnitudexy() const {
 		return sqrtf(x * x + y * y);
 	}
 
-	float magnitudexz() {
+    [[nodiscard]] float magnitudexz() const {
 		return sqrtf(x * x + z * z);
 	}
 
-	Vec3 normalize() {
+    [[nodiscard]] Vec3 normalize() const {
 		return div(magnitude());
 	};
 
-	float distance(Vec3 o) {
+    [[nodiscard]] float distance(Vec3 o) const {
 		float dX = x - o.x;
 		float dY = y - o.y;
 		float dZ = z - o.z;
@@ -212,7 +213,7 @@ struct Vec3_i {
 		struct {
 			int x, y, z;
 		};
-		int arr[3];
+		int arr[3]{};
 	};
 
 	Vec3_i() { x = y = z = 0; }
@@ -220,62 +221,62 @@ struct Vec3_i {
 		this->x = x, this->y = y, this->z = z;
 	}
 
-	bool operator == (Vec3_i v) { return v.x == x && v.y == y && v.z == z; };
-	bool operator != (Vec3_i v) { return v.x != x || v.y != y || v.z != z; };
+	bool operator == (Vec3_i v) const { return v.x == x && v.y == y && v.z == z; };
+	bool operator != (Vec3_i v) const { return v.x != x || v.y != y || v.z != z; };
 
 	/* Add */
 
-	Vec3_i add(int i) {
+    [[nodiscard]] Vec3_i add(int i) const {
 		return Vec3_i(x + i, y + i, z + i);
 	}
 
-	Vec3_i add(int a, int b, int c) {
+    [[nodiscard]] Vec3_i add(int a, int b, int c) const {
 		return Vec3_i(x + a, y + b, z + c);
 	}
 
-	Vec3_i add(Vec3 o) {
+    [[nodiscard]] Vec3_i add(Vec3 o) const {
 		return Vec3_i(x + o.y, y + o.y, z + o.z);
 	}
 
 	/* Subtract */
 
-	Vec3_i sub(int i) {
+    [[nodiscard]] Vec3_i sub(int i) const {
 		return Vec3_i(x - i, y - i, z - i);
 	}
 
-	Vec3_i sub(int a, int b, int c) {
+    [[nodiscard]] Vec3_i sub(int a, int b, int c) const {
 		return Vec3_i(x - a, x - b, z - c);
 	}
 
-	Vec3_i sub(Vec3 o) {
+    [[nodiscard]] Vec3_i sub(Vec3 o) const {
 		return Vec3_i(x - o.x, y - o.y, z - o.z);
 	}
 
 	/* Divide */
 
-	Vec3_i div(int i) {
+    [[nodiscard]] Vec3_i div(int i) const {
 		return Vec3_i(x / i, y / i, z / i);
 	}
 
-	Vec3_i div(int a, int b, int c) {
+    [[nodiscard]] Vec3_i div(int a, int b, int c) const {
 		return Vec3_i(x / a, y / b, z / c);
 	}
 
-	Vec3_i div(Vec3 o) {
+    [[nodiscard]] Vec3_i div(Vec3 o) const {
 		return Vec3_i(x / o.x, y / o.y, z / o.y);
 	}
 
 	/* Multiply */
 
-	Vec3_i mult(int i) {
+    [[nodiscard]] Vec3_i mult(int i) const {
 		return Vec3_i(x * i, y * i, z * i);
 	}
 
-	Vec3_i mult(int a, int b, int c) {
+    [[nodiscard]] Vec3_i mult(int a, int b, int c) const {
 		return Vec3_i(x * a, y * b, z * c);
 	}
 
-	Vec3_i mult(Vec3 o) {
+    [[nodiscard]] Vec3_i mult(Vec3 o) const {
 		return Vec3_i(x * o.x, y * o.y, z * o.z);
 	}
 };
@@ -285,15 +286,15 @@ struct Vec4 {
 		struct {
 			float x, y, z, w;
 		};
-		float arr[4];
+		float arr[4]{};
 	};
 	Vec4() { x = y = z = w = 0; }
-	Vec4(float x = 0, float y = 0, float z = 0, float w = 0) {
+	explicit Vec4(float x = 0, float y = 0, float z = 0, float w = 0) {
 		this->x = x, this->y = y, this->z = z, this->w = w;
 	}
 
-	bool operator == (Vec4 v) { return v.x == x && v.y == y && v.z == z && v.w == w; };
-	bool operator != (Vec4 v) { return v.x != x || v.y != y || v.z != z || v.w != w; };
+	bool operator == (Vec4 v) const { return v.x == x && v.y == y && v.z == z && v.w == w; };
+	bool operator != (Vec4 v) const { return v.x != x || v.y != y || v.z != z || v.w != w; };
 };
 
 struct MC_Colour {
@@ -301,7 +302,7 @@ struct MC_Colour {
 		struct {
 			float r, g, b, a;
 		};
-		float arr[4];
+		float arr[4]{};
 	};
 	bool shouldDelete = true;
 
@@ -349,11 +350,11 @@ struct MC_Colour {
 		this->shouldDelete = shouldDelete;
 	};
 
-	bool operator == (MC_Colour colour) {
+	bool operator == (const MC_Colour& colour) const {
 		return this->r == colour.r && this->g == colour.g && this->b == colour.b;
 	};
 
-	bool operator != (MC_Colour colour) {
+	bool operator != (const MC_Colour& colour) const {
 		return this->r != colour.r || this->g != colour.g || this->b != colour.b;
 	};
 };
@@ -361,22 +362,22 @@ struct MC_Colour {
 class Utils {
 public:
 	static HMODULE hModule;
-	static bool hasExtension(std::string fileName);
-	static bool doesPathExist(std::string);
-	static void CreateDir(std::string);
+	static bool hasExtension(const std::string& fileName);
+	static bool doesPathExist(const std::string&);
+	static void CreateDir(const std::string&);
 	static void DeletePath(std::string);
-	static void WriteToFile(std::string, std::string);
-	static void DebugLogOutput(std::string);
-	static uintptr_t FindAddr(uintptr_t, std::vector<unsigned int>);
+	static void WriteToFile(const std::string&, const std::string&);
+	static void DebugLogOutput(const std::string&);
+	static uintptr_t FindAddr(uintptr_t, const std::vector<unsigned int>&);
 	static uintptr_t FindSig(const char*);
 	static std::string ptrToStr(uintptr_t);
 
-	static bool isStringFloat(std::string);
+	static bool isStringFloat(const std::string&);
 	static float randomFloat(int, int);
 
 	static std::map<uint64_t, bool> KeyMapping;
 	static bool usingKey(uint64_t);
-	static bool IsInnit(Vec2 MousePos, Vec4 Rectangol);
+	static bool IsInit(Vec2 MousePos, Vec4 Rectangle);
 };
 
 class RenderUtils {
@@ -387,8 +388,8 @@ public:
 	static void SetContext(class MinecraftUIRenderContext* Context, class BitmapFont* Font);
 	static void FlushText();
 	static float GetTextWidth(std::string text, float textSize);
-	static void RenderText(std::string text, Vec2 textPos, MC_Colour colour, float textSize, float alpha);
+	static void RenderText(std::string text, Vec2 textPos, const MC_Colour &colour, float textSize, float alpha);
 
-	static void FillRectangle(Vec4 position, MC_Colour colour, float alpha);
-	static void DrawRectangle(Vec4 position, MC_Colour colour, float alpha, float lineWidth);
+	static void FillRectangle(Vec4 position, const MC_Colour& colour, float alpha);
+	static void DrawRectangle(Vec4 position, const MC_Colour& colour, float alpha, float lineWidth);
 };
