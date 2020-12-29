@@ -167,6 +167,7 @@
     <ClCompile Include="Client\Modules\Jesus.cpp" />
     <ClCompile Include="Client\Modules\Jetpack.cpp" />
     <ClCompile Include="Client\Modules\Killaura.cpp" />
+    <ClCompile Include="Client\Modules\MemeplexDisablerxd.cpp" />
     <ClCompile Include="Client\Modules\NoPacket.cpp" />
     <ClCompile Include="Client\Modules\Nuker.cpp" />
     <ClCompile Include="Client\Modules\Spammer.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="Client\Modules\Jesus.h" />
     <ClInclude Include="Client\Modules\Jetpack.h" />
     <ClInclude Include="Client\Modules\Killaura.h" />
+    <ClInclude Include="Client\Modules\MemeplexDisablerxd.h" />
     <ClInclude Include="Client\Modules\NoPacket.h" />
     <ClInclude Include="Client\Modules\Nuker.h" />
     <ClInclude Include="Client\Modules\Spammer.h" />
