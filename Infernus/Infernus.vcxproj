@@ -153,6 +153,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Client\ClientManager.cpp" />
+    <ClCompile Include="Client\Commands\TestCommand.cpp" />
     <ClCompile Include="Client\Modules\AirJump.cpp" />
     <ClCompile Include="Client\Modules\ArrayList.cpp" />
     <ClCompile Include="Client\Modules\AutoSprint.cpp" />
@@ -177,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client\ClientManager.h" />
+    <ClInclude Include="Client\Commands\TestCommand.h" />
     <ClInclude Include="Client\Hooks\Actor.h" />
     <ClInclude Include="Client\Hooks\ClientInstance.h" />
     <ClInclude Include="Client\Hooks\GameMode.h" />

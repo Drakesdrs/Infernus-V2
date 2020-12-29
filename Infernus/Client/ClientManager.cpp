@@ -46,6 +46,12 @@ void ClientManager::InitHooks() {
 	}
 }
 
+#include "Commands/TestCommand.h"
+
+void ClientManager::InitCommands() {
+	Commands.push_back(new TestCommand());
+}
+
 /* Combat */
 #include "Modules/Killaura.h"
 #include "Modules/Hitbox.h"

@@ -7,6 +7,7 @@ void Init(LPVOID lpParam) {
     Utils::DebugLogOutput("Injected...");
 
     ClientManager::InitHooks();
+    ClientManager::InitCommands();
     ClientManager::InitModules();
 }
 

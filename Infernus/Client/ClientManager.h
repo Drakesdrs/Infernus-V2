@@ -6,6 +6,7 @@ private:
 	static std::string CommandPrefix;
 public:
 	static void InitHooks();
+	static void InitCommands();
 	static void InitModules();
 	static std::vector<class Hook*> Hooks;
 	static std::vector<class Module*> Modules;
