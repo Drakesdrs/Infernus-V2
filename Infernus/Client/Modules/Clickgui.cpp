@@ -19,7 +19,7 @@ void Clickgui::onRender() {
 				Vec4 immagokms = Vec4(Screensizestuff.x + ((i % 3) * boxsize) + offset.x, Screensizestuff.y + (helpersmh * boxsize) + offset.y, Screensizestuff.x + ((i % 3) * boxsize) + offset.x + boxsize, Screensizestuff.y + (helpersmh * boxsize) + offset.y + boxsize);
 				RenderUtils::DrawRectangle(immagokms, FrontColour, 1.0f, 1);
 				RenderUtils::RenderText(Categories.at(i), Vec2((immagokms.z - immagokms.x) / 2 + immagokms.x - RenderUtils::GetTextWidth(Categories.at(i), 1) / 2, (immagokms.w - immagokms.y) / 2 + immagokms.y - 5), TextColour, 1.0f, 1.0f);
-				if (clicked && Utils::IsInnit(Mousepos,immagokms)) {
+				if (clicked && Utils::IsInit(Mousepos,immagokms)) {
 					clicked = false;
 					CatOpen = true;
 				}

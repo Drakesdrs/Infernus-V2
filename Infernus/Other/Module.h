@@ -1,4 +1,6 @@
 #pragma once
+#include <utility>
+
 #include "../SDK/Minecraft.h"
 #include "../Client/ClientManager.h"
 
@@ -9,7 +11,7 @@ public:
 	bool isEnabled = false, wasEnabled = false;
 	Module(std::string name, std::string category, std::string description, uint64_t key = NULL);
 	
-	std::string State = "";
+	std::string State;
 	int AnimateProgress = 1;
 	bool closing = false;
 	bool Animating = false;
@@ -33,7 +35,7 @@ public:
 public:
 
 	void setState(std::string newState) {
-		this->State = newState;
+		this->State = std::move(newState);
 	}
 
 	void toggle() {
@@ -50,8 +52,8 @@ class Command {
 public:
 	std::string input, description;
 	Command(std::string input, std::string description) {
-		this->input = input;
-		this->description = description;
+		this->input = std::move(input);
+		this->description = std::move(description);
 	}
 	virtual void execute(std::string input, std::vector<std::string> words) {};
 	void respond(std::string output);

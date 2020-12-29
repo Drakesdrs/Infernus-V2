@@ -115,13 +115,13 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Spammer());
 	Modules.push_back(new Uninject());
 
-	for (int I = 0; I < Modules.size(); I++) { //Initialize Categories
+	for (auto & Module : Modules) { //Initialize Categories
 		bool exists = false;
-		for (auto currCategory : Categories) {
-			if (currCategory == Modules.at(I)->category) exists = true;
+		for (const auto& currCategory : Categories) {
+			if (currCategory == Module->category) exists = true;
 		}
 		if (!exists) {
-			Categories.push_back(Modules.at(I)->category);
+			Categories.push_back(Module->category);
 		}
 	}
 
@@ -141,7 +141,7 @@ class Module* ClientManager::GetModuleByName(std::string name) {
 
 std::vector<class Module*> ClientManager::GetModulesFromCategory(std::string Category) {
 	bool exists = false;
-	for (auto Curr : Categories) {
+	for (const auto& Curr : Categories) {
 		if (Curr == Category) exists = true;
 	}
 	if (exists) {
