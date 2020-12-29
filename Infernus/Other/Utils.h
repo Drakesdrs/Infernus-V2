@@ -371,6 +371,8 @@ public:
 	static uintptr_t FindSig(const char*);
 	static std::string ptrToStr(uintptr_t);
 
+	static bool isStringFloat(std::string);
+
 	static std::map<uint64_t, bool> KeyMapping;
 	static bool usingKey(uint64_t);
 	static bool IsInnit(Vec2 MousePos, Vec4 Rectangol);

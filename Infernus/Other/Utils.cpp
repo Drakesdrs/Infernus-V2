@@ -134,6 +134,13 @@ std::string Utils::ptrToStr(uintptr_t ptr) {
 	return ss.str();
 }
 
+bool Utils::isStringFloat(std::string str) {
+	std::istringstream iss(str);
+	float f;
+	iss >> std::noskipws >> f;
+	return iss.eof() && !iss.fail();
+};
+
 std::map<uint64_t, bool> Utils::KeyMapping;
 
 bool Utils::usingKey(uint64_t key) {

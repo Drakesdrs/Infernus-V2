@@ -47,9 +47,11 @@ void ClientManager::InitHooks() {
 }
 
 #include "Commands/TestCommand.h"
+#include "Commands/SpeedCommand.h"
 
 void ClientManager::InitCommands() {
 	Commands.push_back(new TestCommand());
+	Commands.push_back(new SpeedCommand());
 }
 
 /* Combat */
