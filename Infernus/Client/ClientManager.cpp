@@ -124,6 +124,13 @@ void ClientManager::InitModules() {
 	}
 }
 
+class Module* ClientManager::GetModuleByName(std::string name) {
+	for (auto Module : Modules) {
+		if (Module->name == name) return Module;
+	}
+	return nullptr;
+}
+
 std::vector<class Module*> ClientManager::GetModulesFromCategory(std::string Category) {
 	bool exists = false;
 	for (auto Curr : Categories) {

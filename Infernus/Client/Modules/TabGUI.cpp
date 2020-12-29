@@ -1,5 +1,4 @@
 #include "TabGUI.h"
-#include "../ClientManager.h"
 
 std::vector<std::string> SortArrayOfStrings(std::vector<std::string> stringVecArr) {
 	std::vector<std::string> stringArr;

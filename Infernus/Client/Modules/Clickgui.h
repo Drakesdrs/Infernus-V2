@@ -1,6 +1,5 @@
 #pragma once
 #include "../../Other/Module.h"
-#include "../ClientManager.h"
 
 class Clickgui : public Module {
 public:

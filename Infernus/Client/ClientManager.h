@@ -13,6 +13,7 @@ public:
 	static std::vector<std::string> Categories;
 	static std::vector<class Command*> Commands;
 
+	static class Module* GetModuleByName(std::string name);
 	static std::vector<class Module*> GetModulesFromCategory(std::string Category);
 
 	static bool handleCommand(std::string input);

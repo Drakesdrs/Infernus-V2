@@ -1,5 +1,6 @@
 #pragma once
 #include "../SDK/Minecraft.h"
+#include "../Client/ClientManager.h"
 
 class Module {
 public:
