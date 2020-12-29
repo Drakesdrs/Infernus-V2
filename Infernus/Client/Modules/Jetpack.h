@@ -3,7 +3,9 @@
 
 class Jetpack : public Module {
 public:
-	Jetpack() : Module::Module("Jetpack", "Movement", "Boost directory forwards when holding the desired key (Default: F)", 0x46) { State = "Hello!"; };
+	Jetpack() : Module::Module("Jetpack", "Movement", "Boost directory forwards when holding the desired key (Default: F)", 0x46) {
+		this->State = "Flight";
+	};
 	void onLoop();
 	void onTick();
 private:
