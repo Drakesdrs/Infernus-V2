@@ -61,6 +61,7 @@ void ClientManager::InitCommands() {
 #include "Modules/Jetpack.h"
 #include "Modules/AutoSprint.h"
 #include "Modules/Jesus.h"
+#include "Modules/Speed.h"
 /* Player */
 #include "Modules/ClickTP.h"
 /* Visuals */
@@ -88,6 +89,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Jetpack());
 	Modules.push_back(new AutoSprint());
 	Modules.push_back(new Jesus());
+	Modules.push_back(new Speed());
 	/* Player */
 	Modules.push_back(new ClickTP());
 	/* Visuals */
