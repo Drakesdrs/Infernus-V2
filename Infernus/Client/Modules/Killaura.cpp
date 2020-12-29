@@ -4,7 +4,7 @@ void Killaura::onGmTick() {
 	LocalPlayer* Player = Minecraft::ClientInstance()->LocalPlayer();
 	MultiPlayerLevel* Level = Player->MultiPlayerLevel;
 	GameMode* GM = Minecraft::GameMode();
-	if (Player != nullptr && GM != nullptr && Level != nullptr) {
+	if (Player != nullptr && GM != nullptr && Level != nullptr && Minecraft::ClientInstance()->MinecraftGame()->canUseKeys()) {
 		Vec3 myPos = *Player->getPos();
 		size_t entListSize = Level->getListSize();
 		if (entListSize > 0 && entListSize <= 5000) {
@@ -23,5 +23,8 @@ void Killaura::onGmTick() {
 				}
 			}
 		}
+	}
+	else {
+		this->isEnabled = false;
 	}
 }

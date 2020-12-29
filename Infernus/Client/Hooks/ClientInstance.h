@@ -15,7 +15,7 @@ void Callback(ClientInstance* a1, void* a2) {
 }
 
 void ClientInstance_Hook::Install() {
-	uintptr_t sigAddr = Utils::FindSig("48 89 5C 24 ?? 48 89 74 24 ?? 57 48 83 EC ?? 48 8B F9 48 8B 01");
+	uintptr_t sigAddr = Utils::FindSig("48 89 5C 24 ?? 48 89 74 24 ?? 57 48 83 EC ?? 48 8B F9 48 8B 01 48 8D 54 24 ??");
 	if (sigAddr) {
 		Utils::DebugLogOutput("Found address needed for the ClientInstance Hook, Preparing Hook install now...");
 		if (MH_CreateHook((void*)sigAddr, &Callback, reinterpret_cast<LPVOID*>(&_C_Hook)) == MH_OK) {

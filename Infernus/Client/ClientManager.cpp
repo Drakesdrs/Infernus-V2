@@ -66,6 +66,7 @@ void ClientManager::InitCommands() {
 #include "Modules/AutoSprint.h"
 #include "Modules/Jesus.h"
 #include "Modules/Speed.h"
+#include "Modules/Fly.h"
 /* Player */
 #include "Modules/ClickTP.h"
 /* Visuals */
@@ -78,6 +79,7 @@ void ClientManager::InitCommands() {
 /* Exploits */
 #include "Modules/NoPacket.h"
 #include "Modules/Freecam.h"
+#include "Modules/MemeplexDisablerxd.h"
 /* Other */
 #include "Modules/TestModule.h"
 #include "Modules/Spammer.h"
@@ -94,6 +96,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new AutoSprint());
 	Modules.push_back(new Jesus());
 	Modules.push_back(new Speed());
+	Modules.push_back(new Fly());
 	/* Player */
 	Modules.push_back(new ClickTP());
 	/* Visuals */
@@ -106,6 +109,7 @@ void ClientManager::InitModules() {
 	/* Exploits */
 	Modules.push_back(new NoPacket());
 	Modules.push_back(new Freecam());
+	Modules.push_back(new MemeplexDisablerxd());
 	/* Other */
 	Modules.push_back(new TestModule());
 	Modules.push_back(new Spammer());
