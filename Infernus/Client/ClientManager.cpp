@@ -71,6 +71,7 @@ void ClientManager::InitCommands() {
 #include "Modules/Fly.h"
 /* Player */
 #include "Modules/ClickTP.h"
+#include "Modules/Velocity.h"
 /* Visuals */
 #include "Modules/TabGUI.h"
 #include "Modules/ArrayList.h"
@@ -82,6 +83,7 @@ void ClientManager::InitCommands() {
 #include "Modules/NoPacket.h"
 #include "Modules/Freecam.h"
 #include "Modules/MemeplexDisablerxd.h"
+#include "Modules/HiveDisablerxd.h"
 /* Other */
 #include "Modules/TestModule.h"
 #include "Modules/Spammer.h"
@@ -102,6 +104,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Fly());
 	/* Player */
 	Modules.push_back(new ClickTP());
+	Modules.push_back(new Velocity());
 	//Modules.push_back(new InventoryMove());
 	/* Visuals */
 	Modules.push_back(new TabGUI());
@@ -114,6 +117,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new NoPacket());
 	Modules.push_back(new Freecam());
 	Modules.push_back(new MemeplexDisablerxd());
+	Modules.push_back(new HiveDisablerXD());
 	/* Other */
 	Modules.push_back(new TestModule());
 	Modules.push_back(new Spammer());

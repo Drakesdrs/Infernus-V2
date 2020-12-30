@@ -164,6 +164,7 @@
     <ClCompile Include="Client\Modules\Fly.cpp" />
     <ClCompile Include="Client\Modules\Freecam.cpp" />
     <ClCompile Include="Client\Modules\Hitbox.cpp" />
+    <ClCompile Include="Client\Modules\HiveDisablerxd.cpp" />
     <ClCompile Include="Client\Modules\Instabreak.cpp" />
     <ClCompile Include="Client\Modules\Jesus.cpp" />
     <ClCompile Include="Client\Modules\Jetpack.cpp" />
@@ -178,6 +179,7 @@
     <ClCompile Include="Client\Modules\Triggerbot.cpp" />
     <ClCompile Include="Client\Modules\Uninject.cpp" />
     <ClCompile Include="Client\Commands\ColorCommand.cpp" />
+    <ClCompile Include="Client\Modules\Velocity.cpp" />
     <ClCompile Include="Infernus.cpp" />
     <ClCompile Include="Client\Modules\InventoryMove.cpp" />
     <ClCompile Include="Other\Module.cpp" />
@@ -203,6 +205,7 @@
     <ClInclude Include="Client\Modules\Fly.h" />
     <ClInclude Include="Client\Modules\Freecam.h" />
     <ClInclude Include="Client\Modules\Hitbox.h" />
+    <ClInclude Include="Client\Modules\HiveDisablerxd.h" />
     <ClInclude Include="Client\Modules\Instabreak.h" />
     <ClInclude Include="Client\Modules\Jesus.h" />
     <ClInclude Include="Client\Modules\Jetpack.h" />
@@ -218,6 +221,7 @@
     <ClInclude Include="Client\Modules\Uninject.h" />
     <ClInclude Include="Client\Commands\ColorCommand.h" />
     <ClInclude Include="Client\Modules\InventoryMove.h" />
+    <ClInclude Include="Client\Modules\Velocity.h" />
     <ClInclude Include="Other\Module.h" />
     <ClInclude Include="Other\Utils.h" />
     <ClInclude Include="SDK\Classes\Actor.h" />

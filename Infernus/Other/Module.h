@@ -11,10 +11,12 @@ public:
 	bool isEnabled = false, wasEnabled = false;
 	Module(std::string name, std::string category, std::string description, uint64_t key = NULL);
 	
+	/*Arraylist stuff*/
 	std::string State;
 	int AnimateProgress = 1;
 	bool closing = false;
 	bool Animating = false;
+	//
 
 	void onBaseTick();
 	virtual void onLoop() {};
@@ -32,11 +34,14 @@ public:
 	virtual void onStartDestroyBlock(GameMode* GM, Vec3_i* blockPos, uint8_t blockFace) {};
 	virtual void onPlayerAttack(LocalPlayer* attacker, Actor* victim) {};
 
-public:
+	virtual void onLerp(Actor*, Vec3*) {};
 
+public:
+	/*Arraylist stuff*/
 	void setState(std::string newState) {
 		this->State = std::move(newState);
 	}
+	//
 
 	void toggle() {
 		this->isEnabled = !this->isEnabled;
