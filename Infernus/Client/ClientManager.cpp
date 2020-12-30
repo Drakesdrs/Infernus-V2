@@ -79,6 +79,7 @@ void ClientManager::InitCommands() {
 /* World */
 #include "Modules/Instabreak.h"
 #include "Modules/Nuker.h"
+#include "Modules/ReverseNuker.h"
 /* Exploits */
 #include "Modules/NoPacket.h"
 #include "Modules/Freecam.h"
@@ -113,6 +114,7 @@ void ClientManager::InitModules() {
 	/* World */
 	Modules.push_back(new Instabreak());
 	Modules.push_back(new Nuker());
+	Modules.push_back(new ReverseNuker());
 	/* Exploits */
 	Modules.push_back(new NoPacket());
 	Modules.push_back(new Freecam());

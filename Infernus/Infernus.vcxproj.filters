@@ -100,7 +100,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Client\Commands\ColorCommand.cpp">
-     <Filter>Source Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Client\Modules\InventoryMove.cpp">
       <Filter>Source Files</Filter>
@@ -109,6 +109,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Client\Modules\HiveDisablerxd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Client\Modules\ReverseNuker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -255,6 +258,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Client\Modules\HiveDisablerxd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Client\Modules\ReverseNuker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
