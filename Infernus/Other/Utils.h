@@ -208,6 +208,12 @@ struct Vec3 {
 	}
 };
 
+class AABB {
+public:
+    Vec3 a;
+    Vec3 b;
+};
+
 struct Vec3_i {
 	union {
 		struct {
