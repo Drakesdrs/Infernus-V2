@@ -17,3 +17,7 @@ cmake-build-debug/
 cmake-build-release/
 cmake-build-minsizerel/
 .idea/
+*.p7s
+*.targets
+*.nupkg
+*.h
