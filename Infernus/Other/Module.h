@@ -32,6 +32,8 @@ public:
 	virtual void onStartDestroyBlock(GameMode* GM, Vec3_i* blockPos, uint8_t blockFace) {};
 	virtual void onPlayerAttack(LocalPlayer* attacker, Actor* victim) {};
 
+	virtual void onLerp(Actor*, Vec3*);
+
 public:
 
 	void setState(std::string newState) {
