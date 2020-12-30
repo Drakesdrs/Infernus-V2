@@ -69,6 +69,7 @@ void ClientManager::InitCommands() {
 #include "Modules/Fly.h"
 /* Player */
 #include "Modules/ClickTP.h"
+#include "Modules/Velocity.h"
 /* Visuals */
 #include "Modules/TabGUI.h"
 #include "Modules/ArrayList.h"
@@ -100,6 +101,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Fly());
 	/* Player */
 	Modules.push_back(new ClickTP());
+	Modules.push_back(new Velocity());
 	//Modules.push_back(new InventoryMove());
 	/* Visuals */
 	Modules.push_back(new TabGUI());
