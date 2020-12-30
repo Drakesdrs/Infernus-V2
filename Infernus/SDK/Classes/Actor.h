@@ -29,7 +29,7 @@ public:
 	virtual void Function7();
 	virtual void reset(void);
 	virtual void getOnDeathExperience(void);
-	virtual enum ActorType getOwnerEntityType(void);
+	virtual int getOwnerEntityType(void);
 	virtual void remove(void);
 	virtual void setPos(Vec3 const&);
 	virtual void Function13();
