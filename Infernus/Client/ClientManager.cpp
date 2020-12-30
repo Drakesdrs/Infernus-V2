@@ -49,11 +49,13 @@ void ClientManager::InitHooks() {
 #include "Commands/TestCommand.h"
 #include "Commands/SpeedCommand.h"
 #include "Commands/SpamCommand.h"
+#include "Commands/ColorCommand.h"
 
 void ClientManager::InitCommands() {
 	Commands.push_back(new TestCommand());
 	Commands.push_back(new SpeedCommand());
 	Commands.push_back(new SpamCommand());
+	Commands.push_back(new ColorCommand());
 }
 
 /* Combat */
