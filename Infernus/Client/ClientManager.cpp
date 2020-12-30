@@ -81,6 +81,7 @@ void ClientManager::InitCommands() {
 #include "Modules/NoPacket.h"
 #include "Modules/Freecam.h"
 #include "Modules/MemeplexDisablerxd.h"
+#include "Modules/HiveDisablerxd.h"
 /* Other */
 #include "Modules/TestModule.h"
 #include "Modules/Spammer.h"
@@ -114,6 +115,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new NoPacket());
 	Modules.push_back(new Freecam());
 	Modules.push_back(new MemeplexDisablerxd());
+	Modules.push_back(new HiveDisablerXD());
 	/* Other */
 	Modules.push_back(new TestModule());
 	Modules.push_back(new Spammer());
