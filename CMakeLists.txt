@@ -63,6 +63,12 @@ add_library(Infernus_V2 SHARED
         Infernus/Client/Modules/TestModule.h
         Infernus/Client/Modules/Triggerbot.cpp
         Infernus/Client/Modules/Triggerbot.h
+        Infernus/Client/Modules/MemeplexDisablerxd.cpp
+        Infernus/Client/Modules/MemeplexDisablerxd.h
+        Infernus/Client/Modules/Fly.cpp
+        Infernus/Client/Modules/Fly.h
+        Infernus/Client/Modules/Velocity.cpp
+        Infernus/Client/Modules/Velocity.h
         Infernus/Client/Modules/Uninject.cpp
         Infernus/Client/Modules/Uninject.h
         Infernus/Client/ClientManager.cpp
