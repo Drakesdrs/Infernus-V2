@@ -100,7 +100,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Fly());
 	/* Player */
 	Modules.push_back(new ClickTP());
-	Modules.push_back(new InventoryMove());
+	//Modules.push_back(new InventoryMove());
 	/* Visuals */
 	Modules.push_back(new TabGUI());
 	Modules.push_back(new Arraylist());
