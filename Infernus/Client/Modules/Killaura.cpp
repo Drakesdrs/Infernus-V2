@@ -7,6 +7,7 @@ void Killaura::onGmTick() {
 	if (Player != nullptr && GM != nullptr && Level != nullptr && Minecraft::ClientInstance()->MinecraftGame()->canUseKeys()) {
 		Vec3 myPos = *Player->getPos();
 		size_t entListSize = Level->getListSize();
+		lookeing = Vec2(0, 0);
 		if (entListSize > 0 && entListSize <= 5000) {
 			for (size_t I = 0; I < entListSize; I++) {
 				Actor* currEnt = Level->get(I);
@@ -19,6 +20,7 @@ void Killaura::onGmTick() {
 					if (!isFriend) {
 						GM->attack(currEnt);
 						Player->swing();
+						lookeing = getAngles(*Player->getPos(), *currEnt->getPos());
 					}
 				}
 			}
@@ -26,5 +28,24 @@ void Killaura::onGmTick() {
 	}
 	else {
 		this->isEnabled = false;
+	}
+}
+
+Vec2 Killaura::getAngles(Vec3 PlayerPosition, Vec3 EntityPosition) {
+	Vec2 Angles;
+	float dX = PlayerPosition.x - EntityPosition.x;
+	float dY = PlayerPosition.y - EntityPosition.y;
+	float dZ = PlayerPosition.z - EntityPosition.z;
+	double distance = sqrt(dX * dX + dY * dY + dZ * dZ);
+	Angles.x = (float)(atan2(dY, distance) * 180.0f / PI);
+	Angles.y = (float)(atan2(dZ, dX) * 180.0f / PI) + 90.0f;
+	return Angles;
+};
+
+void Killaura::onTick() {
+	if (Minecraft::ClientInstance()->LocalPlayer() != nullptr) {
+		if (lookeing.x != 0 && lookeing.y != 0) {
+			Minecraft::ClientInstance()->LocalPlayer()->bodyRot = lookeing;
+		}
 	}
 }
