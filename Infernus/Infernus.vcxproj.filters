@@ -100,6 +100,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Client\Commands\ColorCommand.cpp">
+     <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Client\Modules\InventoryMove.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -237,6 +240,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Client\Commands\ColorCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Client\Modules\InventoryMove.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

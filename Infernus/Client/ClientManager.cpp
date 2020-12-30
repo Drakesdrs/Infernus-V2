@@ -86,6 +86,7 @@ void ClientManager::InitCommands() {
 #include "Modules/TestModule.h"
 #include "Modules/Spammer.h"
 #include "Modules/Uninject.h"
+#include "Modules/InventoryMove.h"
 
 void ClientManager::InitModules() {
 	/* Combat */
@@ -101,6 +102,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Fly());
 	/* Player */
 	Modules.push_back(new ClickTP());
+	//Modules.push_back(new InventoryMove());
 	/* Visuals */
 	Modules.push_back(new TabGUI());
 	Modules.push_back(new Arraylist());

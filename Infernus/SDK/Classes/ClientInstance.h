@@ -35,6 +35,15 @@ public:
 		}
 	}
 
+	class GuiData* GuiData() {
+		if (this != nullptr) {
+			return *reinterpret_cast<class GuiData**>(reinterpret_cast<__int64>(this) + 0x4D0);
+		}
+		else {
+			return nullptr;
+		}
+	}
+
 	bool isValidTarget(class Actor* Entity) {
 		if (Entity == nullptr) {
 			return false;
@@ -75,4 +84,24 @@ public:
 	bool canUseKeys() {
 		return *(bool*)(reinterpret_cast<uintptr_t>(this) + 0x260);
 	}
+};
+
+class GuiData
+{
+public:
+	char pad_0000[40]; //0x0000
+	Vec2 ScaledResolution; //0x0028
+public:
+
+	float GuiScale() {
+		return *reinterpret_cast<float*>(reinterpret_cast<uintptr_t>(this) + 0x34);
+	};
+
+	uint16_t mouseX() {
+		return *reinterpret_cast<uint16_t*>(reinterpret_cast<uintptr_t>(this) + 0x52);
+	};
+
+	uint16_t mouseY() {
+		return *reinterpret_cast<uint16_t*>(reinterpret_cast<uintptr_t>(this) + 0x54);
+	};
 };
