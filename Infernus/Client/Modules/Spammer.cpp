@@ -2,7 +2,6 @@
 
 void Spammer::onGmTick() {
 	if (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - savedTime) >= std::chrono::milliseconds((int)delay)) {
-		LocalPlayer* Player = Minecraft::ClientInstance()->LocalPlayer();
 		if (Player != nullptr) {
 			if (this->State == "Bypass") {
 				int rndInt = Utils::randomFloat(0, 100);
