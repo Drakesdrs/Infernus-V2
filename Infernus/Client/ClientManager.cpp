@@ -62,6 +62,7 @@ void ClientManager::InitCommands() {
 #include "Modules/Killaura.h"
 #include "Modules/Hitbox.h"
 #include "Modules/Triggerbot.h"
+#include "Modules/FightBot.h"
 /* Movement */
 #include "Modules/AirJump.h"
 #include "Modules/Jetpack.h"
@@ -97,6 +98,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Killaura());
 	Modules.push_back(new Hitbox());
 	Modules.push_back(new Triggerbot());
+	Modules.push_back(new FightBot());
 	/* Movement */
 	Modules.push_back(new AirJump());
 	Modules.push_back(new Jetpack());
