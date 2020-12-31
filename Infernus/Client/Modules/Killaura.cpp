@@ -1,7 +1,6 @@
 #include "Killaura.h"
 
 void Killaura::onGmTick() {
-	LocalPlayer* Player = Minecraft::ClientInstance()->LocalPlayer();
 	MultiPlayerLevel* Level = Player->MultiPlayerLevel;
 	GameMode* GM = Minecraft::GameMode();
 	if (Player != nullptr && GM != nullptr && Level != nullptr && Minecraft::ClientInstance()->MinecraftGame()->canUseKeys()) {
