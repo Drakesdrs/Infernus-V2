@@ -229,6 +229,7 @@
     <ClInclude Include="Other\Utils.h" />
     <ClInclude Include="Client\Modules\ReverseNuker.h" />
     <ClInclude Include="SDK\Classes\Actor.h" />
+    <ClInclude Include="SDK\Classes\BlockLegacy.h" />
     <ClInclude Include="SDK\Classes\ClientInstance.h" />
     <ClInclude Include="SDK\Classes\GameMode.h" />
     <ClInclude Include="SDK\Classes\LocalPlayer.h" />

@@ -1,4 +1,5 @@
 #pragma once
+#include "BlockLegacy.h"
 #include "MultiPlayerLevel.h"
 
 class Actor {
@@ -10,8 +11,9 @@ public:
 	char pad_0128[152]; //0x0128
 	bool onGround; //0x01C0
 	char pad_01C1[95]; //0x01C1
-	float stepHeight; //0x0220 | Default = 0.5625
-	char pad_0224[308]; //0x0224
+	char pad_0224[292]; //0x0224
+	class BlockSource* BlockSource; //0x0348
+	char pad_0350[8]; //0x0350
 	class MultiPlayerLevel* MultiPlayerLevel; //0x0358
 	char pad_0360[340]; //0x0360
 	Vec2 collision; //0x04B4

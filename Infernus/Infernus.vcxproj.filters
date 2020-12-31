@@ -269,6 +269,9 @@
     <ClInclude Include="Client\Modules\AutoWalk.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SDK\Classes\BlockLegacy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
