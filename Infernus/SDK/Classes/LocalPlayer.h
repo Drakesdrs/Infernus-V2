@@ -174,4 +174,8 @@ public:
 	virtual void Function430();
 	virtual void Function431();
 	virtual void Function432();
+
+	bool inventoryOpen() {
+		return *reinterpret_cast<int*>(reinterpret_cast<uintptr_t>(this) + 0xBE4) != 0;
+	}
 };
