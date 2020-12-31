@@ -83,7 +83,7 @@ void ClientManager::InitCommands() {
 /* Exploits */
 #include "Modules/NoPacket.h"
 #include "Modules/Freecam.h"
-#include "Modules/MemeplexDisablerxd.h"
+#include "Modules/MineplexDisabler.h"
 #include "Modules/HiveDisablerxd.h"
 /* Other */
 #include "Modules/TestModule.h"
@@ -107,7 +107,6 @@ void ClientManager::InitModules() {
 	/* Player */
 	Modules.push_back(new ClickTP());
 	Modules.push_back(new Velocity());
-	//Modules.push_back(new InventoryMove());
 	/* Visuals */
 	Modules.push_back(new TabGUI());
 	Modules.push_back(new Arraylist());
@@ -118,7 +117,7 @@ void ClientManager::InitModules() {
 	/* Exploits */
 	Modules.push_back(new NoPacket());
 	Modules.push_back(new Freecam());
-	Modules.push_back(new MemeplexDisablerxd());
+	Modules.push_back(new MineplexDisabler());
 	Modules.push_back(new HiveDisablerXD());
 	/* Other */
 	Modules.push_back(new TestModule());
