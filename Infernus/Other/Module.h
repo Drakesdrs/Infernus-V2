@@ -1,6 +1,4 @@
 #pragma once
-#include <utility>
-
 #include "../SDK/Minecraft.h"
 #include "../Client/ClientManager.h"
 
@@ -16,7 +14,6 @@ public:
 	int AnimateProgress = 1;
 	bool closing = false;
 	bool Animating = false;
-	//
 
 	void onBaseTick();
 	virtual void onLoop() {};
