@@ -69,6 +69,7 @@ void ClientManager::InitCommands() {
 #include "Modules/Jesus.h"
 #include "Modules/Speed.h"
 #include "Modules/Fly.h"
+#include "Modules/AutoWalk.h"
 /* Player */
 #include "Modules/ClickTP.h"
 #include "Modules/Velocity.h"
@@ -103,6 +104,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Jesus());
 	Modules.push_back(new Speed());
 	Modules.push_back(new Fly());
+	Modules.push_back(new AutoWalk());
 	/* Player */
 	Modules.push_back(new ClickTP());
 	Modules.push_back(new Velocity());

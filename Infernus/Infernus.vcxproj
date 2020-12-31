@@ -152,6 +152,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Client\Modules\AutoWalk.cpp" />
     <ClCompile Include="Client\ClientManager.cpp" />
     <ClCompile Include="Client\Commands\SpamCommand.cpp" />
     <ClCompile Include="Client\Commands\SpeedCommand.cpp" />
@@ -187,6 +188,7 @@
     <ClCompile Include="Client\Modules\ReverseNuker.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Client\Modules\AutoWalk.h" />
     <ClInclude Include="Client\ClientManager.h" />
     <ClInclude Include="Client\Commands\SpamCommand.h" />
     <ClInclude Include="Client\Commands\SpeedCommand.h" />
