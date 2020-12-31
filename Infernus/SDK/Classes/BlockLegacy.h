@@ -19,6 +19,10 @@ public:
 	char pad_00E0[104]; //0x00E0
 	int64_t blockId; //0x0148
 	char pad_0150[48]; //0x0150
+public:
+	int BlockID() {
+		return *reinterpret_cast<int*>(reinterpret_cast<uintptr_t>(this) + 0x148);
+	}
 };
 
 class Block {
