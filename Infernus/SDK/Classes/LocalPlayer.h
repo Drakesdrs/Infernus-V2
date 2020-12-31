@@ -176,6 +176,6 @@ public:
 	virtual void Function432();
 
 	bool inventoryOpen() {
-		return *reinterpret_cast<int*>(reinterpret_cast<uintptr_t>(this) + 0xBE4) != 0;
+		return *reinterpret_cast<int*>(reinterpret_cast<uintptr_t>(this) + 0x1110) > 1;
 	}
 };
