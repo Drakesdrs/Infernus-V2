@@ -2,7 +2,6 @@
 
 void HiveDisabler::onGmTick() {
 	if (Minecraft::ClientInstance()->MinecraftGame()->canUseKeys()) {
-		LocalPlayer* Player = Minecraft::ClientInstance()->LocalPlayer();
 		if (send && XDwhat.size() > 0) {
 			for (int i = 0; i < XDwhat.size(); i++) {
 				if (XDwhat.at(0) == 1) {
