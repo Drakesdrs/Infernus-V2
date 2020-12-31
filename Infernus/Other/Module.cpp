@@ -23,6 +23,7 @@ void Module::onBaseTick() {
 		Animating = true;
 		wasEnabled = isEnabled;
 		Minecraft::ClientInstance()->clientMessage(this->name + " " + std::string(isEnabled ? "Enabled" : "Disabled"));
+		ClientManager::UpdateModuleData(this);
 	}
 	if (isEnabled) onTick();
 }

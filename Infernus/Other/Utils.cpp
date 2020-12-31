@@ -134,6 +134,13 @@ std::string Utils::ptrToStr(uintptr_t ptr) {
 	return ss.str();
 }
 
+uint64_t Utils::strToPtr(const std::string& ptr) {
+	std::stringstream ss(ptr);
+	uint64_t result;
+	ss >> result;
+	return result;
+}
+
 bool Utils::isStringFloat(const std::string& str) {
 	std::istringstream iss(str);
 	float f;
@@ -146,6 +153,12 @@ float Utils::randomFloat(int min, int max) {
 	std::mt19937 gen(rd());
 	std::uniform_real_distribution<>dis(min, max);
 	return dis(gen);
+}
+
+bool Utils::stringToBool(const std::string& str) {
+	bool b;
+	std::istringstream(str) >> std::boolalpha >> b;
+	return b;
 }
 
 std::map<uint64_t, bool> Utils::KeyMapping;
