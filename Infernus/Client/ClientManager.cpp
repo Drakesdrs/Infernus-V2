@@ -49,11 +49,13 @@ void ClientManager::InitHooks() {
 #include "Commands/TestCommand.h"
 #include "Commands/SpeedCommand.h"
 #include "Commands/SpamCommand.h"
+#include "Commands/ColorCommand.h"
 
 void ClientManager::InitCommands() {
 	Commands.push_back(new TestCommand());
 	Commands.push_back(new SpeedCommand());
 	Commands.push_back(new SpamCommand());
+	Commands.push_back(new ColorCommand());
 }
 
 /* Combat */
@@ -67,6 +69,7 @@ void ClientManager::InitCommands() {
 #include "Modules/Jesus.h"
 #include "Modules/Speed.h"
 #include "Modules/Fly.h"
+#include "Modules/AutoWalk.h"
 /* Player */
 #include "Modules/ClickTP.h"
 #include "Modules/Velocity.h"
@@ -77,10 +80,12 @@ void ClientManager::InitCommands() {
 /* World */
 #include "Modules/Instabreak.h"
 #include "Modules/Nuker.h"
+#include "Modules/ReverseNuker.h"
 /* Exploits */
 #include "Modules/NoPacket.h"
 #include "Modules/Freecam.h"
 #include "Modules/MemeplexDisablerxd.h"
+#include "Modules/HiveDisablerxd.h"
 /* Other */
 #include "Modules/TestModule.h"
 #include "Modules/Spammer.h"
@@ -99,6 +104,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Jesus());
 	Modules.push_back(new Speed());
 	Modules.push_back(new Fly());
+	Modules.push_back(new AutoWalk());
 	/* Player */
 	Modules.push_back(new ClickTP());
 	Modules.push_back(new Velocity());
@@ -110,10 +116,12 @@ void ClientManager::InitModules() {
 	/* World */
 	Modules.push_back(new Instabreak());
 	Modules.push_back(new Nuker());
+	Modules.push_back(new ReverseNuker());
 	/* Exploits */
 	Modules.push_back(new NoPacket());
 	Modules.push_back(new Freecam());
 	Modules.push_back(new MemeplexDisablerxd());
+	Modules.push_back(new HiveDisablerXD());
 	/* Other */
 	Modules.push_back(new TestModule());
 	Modules.push_back(new Spammer());

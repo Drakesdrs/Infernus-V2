@@ -152,6 +152,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Client\Modules\AutoWalk.cpp" />
     <ClCompile Include="Client\ClientManager.cpp" />
     <ClCompile Include="Client\Commands\SpamCommand.cpp" />
     <ClCompile Include="Client\Commands\SpeedCommand.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Client\Modules\Fly.cpp" />
     <ClCompile Include="Client\Modules\Freecam.cpp" />
     <ClCompile Include="Client\Modules\Hitbox.cpp" />
+    <ClCompile Include="Client\Modules\HiveDisablerxd.cpp" />
     <ClCompile Include="Client\Modules\Instabreak.cpp" />
     <ClCompile Include="Client\Modules\Jesus.cpp" />
     <ClCompile Include="Client\Modules\Jetpack.cpp" />
@@ -177,13 +179,16 @@
     <ClCompile Include="Client\Modules\TestModule.cpp" />
     <ClCompile Include="Client\Modules\Triggerbot.cpp" />
     <ClCompile Include="Client\Modules\Uninject.cpp" />
+    <ClCompile Include="Client\Commands\ColorCommand.cpp" />
     <ClCompile Include="Client\Modules\Velocity.cpp" />
     <ClCompile Include="Infernus.cpp" />
     <ClCompile Include="Client\Modules\InventoryMove.cpp" />
     <ClCompile Include="Other\Module.cpp" />
     <ClCompile Include="Other\Utils.cpp" />
+    <ClCompile Include="Client\Modules\ReverseNuker.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Client\Modules\AutoWalk.h" />
     <ClInclude Include="Client\ClientManager.h" />
     <ClInclude Include="Client\Commands\SpamCommand.h" />
     <ClInclude Include="Client\Commands\SpeedCommand.h" />
@@ -203,6 +208,7 @@
     <ClInclude Include="Client\Modules\Fly.h" />
     <ClInclude Include="Client\Modules\Freecam.h" />
     <ClInclude Include="Client\Modules\Hitbox.h" />
+    <ClInclude Include="Client\Modules\HiveDisablerxd.h" />
     <ClInclude Include="Client\Modules\Instabreak.h" />
     <ClInclude Include="Client\Modules\Jesus.h" />
     <ClInclude Include="Client\Modules\Jetpack.h" />
@@ -216,10 +222,12 @@
     <ClInclude Include="Client\Modules\TestModule.h" />
     <ClInclude Include="Client\Modules\Triggerbot.h" />
     <ClInclude Include="Client\Modules\Uninject.h" />
+    <ClInclude Include="Client\Commands\ColorCommand.h" />
     <ClInclude Include="Client\Modules\InventoryMove.h" />
     <ClInclude Include="Client\Modules\Velocity.h" />
     <ClInclude Include="Other\Module.h" />
     <ClInclude Include="Other\Utils.h" />
+    <ClInclude Include="Client\Modules\ReverseNuker.h" />
     <ClInclude Include="SDK\Classes\Actor.h" />
     <ClInclude Include="SDK\Classes\ClientInstance.h" />
     <ClInclude Include="SDK\Classes\GameMode.h" />

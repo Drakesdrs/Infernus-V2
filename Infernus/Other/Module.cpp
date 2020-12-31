@@ -14,13 +14,13 @@ void Module::onBaseTick() {
 	if (wasEnabled != isEnabled) {
 		if (isEnabled) {
 			onEnable();
-			closing = false;
+			closing = false; /*Arraylist stuff*/
 		}
 		else {
 			onDisable();
-			closing = true;
+			closing = true; /*Arraylist stuff*/
 		}
-		Animating = true;
+		Animating = true; /*Arraylist stuff*/
 		wasEnabled = isEnabled;
 		Minecraft::ClientInstance()->clientMessage(this->name + " " + std::string(isEnabled ? "Enabled" : "Disabled"));
 		ClientManager::UpdateModuleData(this);
