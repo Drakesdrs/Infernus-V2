@@ -93,9 +93,6 @@
     <ClCompile Include="Client\Commands\SpamCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Client\Modules\MemeplexDisablerxd.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Client\Modules\Fly.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -108,13 +105,13 @@
     <ClCompile Include="Client\Modules\Velocity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Client\Modules\HiveDisablerxd.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Client\Modules\ReverseNuker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Client\Modules\AutoWalk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Client\Modules\MineplexDisabler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Client\Modules\HiveDisabler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -245,9 +242,6 @@
     <ClInclude Include="Client\Commands\SpamCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Client\Modules\MemeplexDisablerxd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Client\Modules\Fly.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -260,16 +254,16 @@
     <ClInclude Include="Client\Modules\Velocity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Client\Modules\HiveDisablerxd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Client\Modules\ReverseNuker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Client\Modules\AutoWalk.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SDK\Classes\BlockLegacy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Client\Modules\MineplexDisabler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Client\Modules\HiveDisabler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
