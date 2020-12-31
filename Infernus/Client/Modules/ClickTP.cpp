@@ -2,7 +2,6 @@
 
 void ClickTP::onMouse(char action, bool isDown, bool* cancel) {
 	if (action == 2 && isDown) {
-		LocalPlayer* Player = Minecraft::ClientInstance()->LocalPlayer();
 		if (Player != nullptr) {
 			MultiPlayerLevel* Level = Player->MultiPlayerLevel;
 			Vec3_i blockPos = Level->facingBlockPos;
