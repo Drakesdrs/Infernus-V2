@@ -89,7 +89,6 @@ void ClientManager::InitCommands() {
 #include "Modules/TestModule.h"
 #include "Modules/Spammer.h"
 #include "Modules/Uninject.h"
-#include "Modules/InventoryMove.h"
 
 void ClientManager::InitModules() {
 	/* Combat */
