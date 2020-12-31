@@ -8,8 +8,9 @@ public:
 	uint64_t key;
 	bool isEnabled = false, wasEnabled = false;
 	Module(std::string name, std::string category, std::string description, uint64_t key = NULL);
-	
-	/*Arraylist stuff*/
+
+	static class LocalPlayer* Player;
+
 	std::string State;
 	int AnimateProgress = 1;
 	bool closing = false;

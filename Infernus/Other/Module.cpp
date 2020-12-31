@@ -1,5 +1,7 @@
 #include "Module.h"
 
+class LocalPlayer* Module::Player = nullptr;
+
 Module::Module(std::string name, std::string category, std::string description, uint64_t key) {
 	this->name = std::move(name);
 	this->category = std::move(category);
@@ -8,6 +10,7 @@ Module::Module(std::string name, std::string category, std::string description, 
 }
 
 void Module::onBaseTick() {
+	this->Player = Minecraft::ClientInstance()->LocalPlayer();
 	onLoop();
 	if (wasEnabled != isEnabled) {
 		if (isEnabled) {
