@@ -42,10 +42,12 @@ Vec2 Killaura::getAngles(Vec3 PlayerPosition, Vec3 EntityPosition) {
 	return Angles;
 };
 
-void Killaura::onTick() {
-	if (Minecraft::ClientInstance()->LocalPlayer() != nullptr) {
+void Killaura::onPacket(PacketType type, void* Packet, bool* cancel) {
+	if (type == PacketType::Movement) {
+		MovePlayerPacket* current = (MovePlayerPacket*)Packet;
 		if (lookeing.x != 0 && lookeing.y != 0) {
-			Minecraft::ClientInstance()->LocalPlayer()->bodyRot = lookeing;
+			current->bodyRot.x = lookeing.x;
+			current->bodyRot.y = lookeing.y;
 		}
 	}
 }
