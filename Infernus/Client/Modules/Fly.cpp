@@ -1,10 +1,8 @@
 #include "Fly.h"
 
 void Fly::onGmTick() {
-	ClientInstance* SexInstance = Minecraft::ClientInstance();
-	LocalPlayer* Player = Minecraft::ClientInstance()->LocalPlayer();
 	bool wKey = Utils::usingKey(0x57), sKey = Utils::usingKey(0x53), aKey = Utils::usingKey(0x41), dKey = Utils::usingKey(0x44), spaceKey = Utils::usingKey(0x20), shiftKey = Utils::usingKey(0xA0);
-	if (SexInstance != nullptr && SexInstance->MinecraftGame()->canUseKeys() && Player != nullptr) {
+	if (Player != nullptr && Minecraft::ClientInstance()->MinecraftGame()->canUseKeys()) {
 		if (wKey || sKey || aKey || dKey) {
 			float yaw = Player->bodyRot.y;
 			if (wKey) {

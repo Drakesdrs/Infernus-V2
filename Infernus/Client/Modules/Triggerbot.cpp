@@ -1,7 +1,6 @@
 #include "Triggerbot.h"
 
 void Triggerbot::onGmTick() {
-	LocalPlayer* Player = Minecraft::ClientInstance()->LocalPlayer();
 	MultiPlayerLevel* Level = Player->MultiPlayerLevel;
 	GameMode* GM = Minecraft::GameMode();
 	if (Player != nullptr && Level != nullptr && GM != nullptr) {

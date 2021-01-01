@@ -1,7 +1,6 @@
 #include "Jetpack.h"
 
 void Jetpack::onLoop() {
-	LocalPlayer* Player = Minecraft::ClientInstance()->LocalPlayer();
 	MinecraftGame* mcGame = Minecraft::ClientInstance()->MinecraftGame();
 	if (Utils::usingKey(this->key)) {
 		if (Player != nullptr && mcGame != nullptr && mcGame->canUseKeys()) {
@@ -24,7 +23,6 @@ void Jetpack::onLoop() {
 }
 
 void Jetpack::onTick() {
-	LocalPlayer* Player = Minecraft::ClientInstance()->LocalPlayer();
 	if (Player != nullptr) {
 		Vec2 currRot = Player->bodyRot;
 		Vec2 angles = Vec2((currRot.x) * -(PI / 180.f), (currRot.y + 90.0f) * (PI / 180.f));

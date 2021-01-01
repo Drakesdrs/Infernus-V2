@@ -1,6 +1,6 @@
-#include "MemeplexDisablerxd.h"
+#include "MineplexDisabler.h"
 
-void MemeplexDisablerxd::onPacket(PacketType type, void* Packet, bool* cancel) {
+void MineplexDisabler::onPacket(PacketType type, void* Packet, bool* cancel) {
 	if (type == PacketType::Movement) {
 		MovePlayerPacket* current = (MovePlayerPacket*)Packet;
 		if (counter == 5) counter = 0;

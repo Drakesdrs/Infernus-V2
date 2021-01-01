@@ -1,7 +1,6 @@
 #include "Hitbox.h"
 
 void Hitbox::onGmTick() {
-	LocalPlayer* Player = Minecraft::ClientInstance()->LocalPlayer();
 	if (Player != nullptr) {
 		MultiPlayerLevel* curr = Player->MultiPlayerLevel;
 		size_t size = curr->getListSize();
@@ -17,7 +16,6 @@ void Hitbox::onGmTick() {
 }
 
 void Hitbox::onDisable() {
-	LocalPlayer* Player = Minecraft::ClientInstance()->LocalPlayer();
 	if (Player != nullptr) {
 		MultiPlayerLevel* curr = Player->MultiPlayerLevel;
 		size_t size = curr->getListSize();

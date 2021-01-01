@@ -1,6 +1,6 @@
 #include "Module.h"
 
-#include <utility>
+class LocalPlayer* Module::Player = nullptr;
 
 Module::Module(std::string name, std::string category, std::string description, uint64_t key) {
 	this->name = std::move(name);
@@ -10,6 +10,7 @@ Module::Module(std::string name, std::string category, std::string description, 
 }
 
 void Module::onBaseTick() {
+	this->Player = Minecraft::ClientInstance()->LocalPlayer();
 	onLoop();
 	if (wasEnabled != isEnabled) {
 		if (isEnabled) {
@@ -23,6 +24,7 @@ void Module::onBaseTick() {
 		Animating = true; /*Arraylist stuff*/
 		wasEnabled = isEnabled;
 		Minecraft::ClientInstance()->clientMessage(this->name + " " + std::string(isEnabled ? "Enabled" : "Disabled"));
+		ClientManager::UpdateModuleData(this);
 	}
 	if (isEnabled) onTick();
 }

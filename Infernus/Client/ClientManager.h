@@ -17,4 +17,7 @@ public:
 	static std::vector<class Module*> GetModulesFromCategory(std::string Category);
 
 	static bool handleCommand(std::string input);
+
+	static void InitModuleFiles();
+	static void UpdateModuleData(class Module*);
 };

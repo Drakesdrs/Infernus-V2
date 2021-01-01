@@ -16,6 +16,6 @@ public:
 	}
 private:
 	std::chrono::time_point<std::chrono::steady_clock> savedTime = std::chrono::high_resolution_clock::now();
-	std::string message = std::string("Infernus Client: https://discord.gg/DkFXxjBBQ5");
+	std::string message = std::string("Infernus Client: https://discord.gg/KpUzckt4x3");
 	int delay = 1000;
 };

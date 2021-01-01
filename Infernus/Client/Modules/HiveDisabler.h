@@ -1,9 +1,9 @@
 #pragma once
 #include "../../Other/Module.h"
 
-class HiveDisablerXD : public Module {
+class HiveDisabler : public Module {
 public:
-	HiveDisablerXD() : Module::Module("HiveDisablerxd", "Exploits", "xd") {};
+	HiveDisabler() : Module::Module("HiveDisabler", "Exploits", "Bypass the Hive's AntiCheat") {};
 	void onGmTick();
 	void onDisable() { movePacket.clear(); authPacket.clear(); XDwhat.clear(); tick = 0; packetcount = 0; log = true; send = false; };
 	void onPacket(PacketType type, void* Packet, bool* cancel);

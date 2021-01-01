@@ -1,8 +1,7 @@
-#include "HiveDisablerXD.h"
+#include "HiveDisabler.h"
 
-void HiveDisablerXD::onGmTick() {
+void HiveDisabler::onGmTick() {
 	if (Minecraft::ClientInstance()->MinecraftGame()->canUseKeys()) {
-		LocalPlayer* Player = Minecraft::ClientInstance()->LocalPlayer();
 		if (send && XDwhat.size() > 0) {
 			for (int i = 0; i < XDwhat.size(); i++) {
 				if (XDwhat.at(0) == 1) {
@@ -33,7 +32,7 @@ void HiveDisablerXD::onGmTick() {
 	}
 }
 
-void HiveDisablerXD::onPacket(PacketType type, void* Packet, bool* cancel) {
+void HiveDisabler::onPacket(PacketType type, void* Packet, bool* cancel) {
 	if (type == PacketType::Movement && log) {
 		MovePlayerPacket* current = (MovePlayerPacket*)Packet;
 		movePacket.push_back(*current); XDwhat.push_back(1);
