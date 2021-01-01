@@ -86,6 +86,7 @@ void ClientManager::InitCommands() {
 #include "Modules/Freecam.h"
 #include "Modules/MemeplexDisablerxd.h"
 #include "Modules/HiveDisablerxd.h"
+#include "Modules/CubecraftFly.h"
 /* Other */
 #include "Modules/TestModule.h"
 #include "Modules/Spammer.h"
@@ -105,6 +106,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Speed());
 	Modules.push_back(new Fly());
 	Modules.push_back(new AutoWalk());
+	Modules.push_back(new CubecraftFly());
 	/* Player */
 	Modules.push_back(new ClickTP());
 	Modules.push_back(new Velocity());
