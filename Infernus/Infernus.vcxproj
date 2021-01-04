@@ -183,6 +183,7 @@
     <ClCompile Include="Client\Modules\Uninject.cpp" />
     <ClCompile Include="Client\Commands\ColorCommand.cpp" />
     <ClCompile Include="Client\Modules\Velocity.cpp" />
+    <ClCompile Include="Client\Modules\PlayerFinder.cpp" />
     <ClCompile Include="Infernus.cpp" />
     <ClCompile Include="Other\Module.cpp" />
     <ClCompile Include="Other\Utils.cpp" />
@@ -226,6 +227,7 @@
     <ClInclude Include="Client\Modules\Uninject.h" />
     <ClInclude Include="Client\Commands\ColorCommand.h" />
     <ClInclude Include="Client\Modules\Velocity.h" />
+    <ClInclude Include="Client\Modules\PlayerFinder.h" />
     <ClInclude Include="Other\Module.h" />
     <ClInclude Include="Other\Utils.h" />
     <ClInclude Include="SDK\Classes\Actor.h" />

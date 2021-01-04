@@ -24,7 +24,7 @@ uint64_t Packet::MovePlayerPacket_Addr = 0x0;
 uint64_t Packet::PlayerAuthPacket_Addr = 0x0;
 uint64_t Packet::TextPacket_Addr = 0x0;
 /* Other */
-std::vector<std::string> Minecraft::Friends = { "EchoHackCmd", "bricker1462", "SIMANNTHE1ST" };
+std::vector<std::string> Minecraft::Friends = { "EchoHackCmd", "bricker1462", "SIMANNTHE1ST", "PatarFan" };
 
 void ClientManager::InitHooks() {
 
@@ -78,6 +78,7 @@ void ClientManager::InitCommands() {
 #include "Modules/TabGUI.h"
 #include "Modules/ArrayList.h"
 #include "Modules/Clickgui.h"
+#include "Modules/PlayerFinder.h"
 /* World */
 #include "Modules/Instabreak.h"
 #include "Modules/Nuker.h"
@@ -114,6 +115,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new TabGUI());
 	Modules.push_back(new Arraylist());
 	Modules.push_back(new Clickgui());
+	Modules.push_back(new PlayerFinder());
 	/* World */
 	Modules.push_back(new Instabreak());
 	Modules.push_back(new Nuker());
