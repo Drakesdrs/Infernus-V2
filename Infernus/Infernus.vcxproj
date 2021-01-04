@@ -177,6 +177,7 @@
     <ClCompile Include="Client\Modules\Spammer.cpp" />
     <ClCompile Include="Client\Modules\Speed.cpp" />
     <ClCompile Include="Client\Modules\TabGUI.cpp" />
+    <ClCompile Include="Client\Modules\TargetStrafe.cpp" />
     <ClCompile Include="Client\Modules\TestModule.cpp" />
     <ClCompile Include="Client\Modules\Triggerbot.cpp" />
     <ClCompile Include="Client\Modules\Uninject.cpp" />
@@ -219,6 +220,7 @@
     <ClInclude Include="Client\Modules\Spammer.h" />
     <ClInclude Include="Client\Modules\Speed.h" />
     <ClInclude Include="Client\Modules\TabGUI.h" />
+    <ClInclude Include="Client\Modules\TargetStrafe.h" />
     <ClInclude Include="Client\Modules\TestModule.h" />
     <ClInclude Include="Client\Modules\Triggerbot.h" />
     <ClInclude Include="Client\Modules\Uninject.h" />

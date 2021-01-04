@@ -1,4 +1,5 @@
 #include "Utils.h"
+#include "../SDK/Minecraft.h"
 
 HMODULE Utils::hModule = nullptr;
 
@@ -167,6 +168,52 @@ bool Utils::usingKey(uint64_t key) {
 	return KeyMapping[key];
 }
 
+bool Utils::IsInit(Vec2 MousePos, Vec4 Rectangle) {
+	if (MousePos.x >= Rectangle.x && MousePos.x <= Rectangle.z && MousePos.y >= Rectangle.y && MousePos.y <= Rectangle.w)
+		return true;
+	else
+		return false;
+}
+
+//int Utils::GMVelocityPriority = 0;
+//
+//void Utils::SetGMVelocity(Vec3 velocity, int Priority) {
+//	if (GMVelocityPriority <= Priority && Minecraft().ClientInstance()->LocalPlayer() != nullptr) {
+//		GMVelocityPriority = Priority;
+//		Minecraft().ClientInstance()->LocalPlayer()->velocity = velocity;
+//	}
+//}
+
+//
+//void Utils::setentity(Actor &nigga) {
+//	bool yes = true;
+//	for (int i = 0; i < entidies.size(); i++) {
+//		if (&entidies.at(i) == &nigga && nigga.isAlive()) { yes = false; break; };
+//	}
+//	if (yes && (nigga.getPos() != nigga.getPosOld())) {
+//		entidies.push_back(nigga);
+//	}
+//}
+//
+//bool Utils::getentity(Actor& nigga) {
+//	for (int i = 0; i < entidies.size(); i++) {
+//		if (&entidies.at(i) == &nigga) { return true; break; };
+//	}
+//	return false;
+//}
+
+
+Vec2 Utils::getAngles(Vec3 PlayerPosition, Vec3 EntityPosition) {
+	Vec2 Angles;
+	float dX = PlayerPosition.x - EntityPosition.x;
+	float dY = PlayerPosition.y - EntityPosition.y;
+	float dZ = PlayerPosition.z - EntityPosition.z;
+	double distance = sqrt(dX * dX + dY * dY + dZ * dZ);
+	Angles.x = (float)(atan2(dY, distance) * 180.0f / PI);
+	Angles.y = (float)(atan2(dZ, dX) * 180.0f / PI) + 90.0f;
+	return Angles;
+};
+
 /* Render Utils */
 
 #include "../SDK/Classes/ClientInstance.h"
@@ -214,11 +261,4 @@ void RenderUtils::DrawRectangle(Vec4 position, const MC_Colour& colour, float al
 		FillRectangle(Vec4(position.z - lineWidth, position.y, position.z + lineWidth, position.w), colour, alpha);
 		FillRectangle(Vec4(position.x - lineWidth, position.w - lineWidth, position.z + lineWidth, position.w + lineWidth), colour, alpha);
 	}
-}
-
-bool Utils::IsInit(Vec2 MousePos, Vec4 Rectangle) {
-	if (MousePos.x >= Rectangle.x && MousePos.x <= Rectangle.z && MousePos.y >= Rectangle.y && MousePos.y <= Rectangle.w)
-		return true;
-	else
-		return false;
 }

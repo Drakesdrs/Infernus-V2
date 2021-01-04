@@ -12,5 +12,5 @@ private:
 	std::vector<PlayerAuthInputPacket> authPacket;
 	std::vector<int> XDwhat;
 	bool log = true, send = false;
-	int tick, packetcount, multiplier = 15;
+	int tick, packetcount, multiplier = 25;
 };

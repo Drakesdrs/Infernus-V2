@@ -62,6 +62,7 @@ void ClientManager::InitCommands() {
 #include "Modules/Killaura.h"
 #include "Modules/Hitbox.h"
 #include "Modules/Triggerbot.h"
+#include "Modules/TargetStrafe.h"
 /* Movement */
 #include "Modules/AirJump.h"
 #include "Modules/Jetpack.h"
@@ -105,6 +106,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Fly());
 	Modules.push_back(new AutoWalk());
 	Modules.push_back(new CubecraftFly());
+	Modules.push_back(new TargetStrafe());
 	/* Player */
 	Modules.push_back(new ClickTP());
 	Modules.push_back(new Velocity());

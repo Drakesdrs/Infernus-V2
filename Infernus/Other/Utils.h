@@ -395,6 +395,15 @@ public:
 	static std::map<uint64_t, bool> KeyMapping;
 	static bool usingKey(uint64_t);
 	static bool IsInit(Vec2 MousePos, Vec4 Rectangle);
+
+	static Vec2 getAngles(Vec3 PlayerPosition, Vec3 EntityPosition);
+
+	//static int GMVelocityPriority;;
+	//static void SetGMVelocity(Vec3 velocity, int Priority);
+
+	//std::vector<>
+	//static void setentity(Actor& nigga);
+	//static bool getentity(Actor& nigga);
 };
 
 class RenderUtils {

@@ -2,7 +2,7 @@
 
 void HiveDisabler::onGmTick() {
 	if (Minecraft::ClientInstance()->MinecraftGame()->canUseKeys()) {
-		if (send && XDwhat.size() > 0) {
+		if (/*send &&*/ XDwhat.size() > 0) {
 			for (int i = 0; i < XDwhat.size(); i++) {
 				if (XDwhat.at(0) == 1) {
 					for (int i = 0; i < multiplier; i++) {
@@ -22,10 +22,9 @@ void HiveDisabler::onGmTick() {
 				}
 				XDwhat.erase(XDwhat.begin());
 			}
-			send = false;
 		}
-		tick++;
-		if (tick == 1) { tick = 0; send = true; }
+		/*tick++;
+		if (tick == 1) { tick = 0; send = true; }*/
 	}
 	else {
 		movePacket.clear(); authPacket.clear(); XDwhat.clear(); tick = 0; packetcount = 0; log = true; send = false;
