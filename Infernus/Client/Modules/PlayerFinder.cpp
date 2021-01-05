@@ -13,15 +13,10 @@ void PlayerFinder::onRender() {
 				Actor* currPlayer = entlist->get(I);
 
 				if (currPlayer != nullptr && currPlayer != Player) {
-					std::ostringstream x;
-					x << currPlayer->getPos()->x;
-					std::ostringstream y;
-					y << currPlayer->getPos()->y;
-					std::ostringstream z;
-					z << currPlayer->getPos()->z;
-					std::string zpos(z.str());
-					std::string xpos(x.str());
-					std::string ypos(y.str());
+					std::string xpos = std::to_string(currPlayer->getPos()->x);
+					std::string ypos = std::to_string(currPlayer->getPos()->y);
+					std::string zpos = std::to_string(currPlayer->getPos()->z);
+
 
 					RenderUtils::RenderText("x: " + xpos + " y: " + ypos +  " z: " + zpos, Vec2(10, 60 + I * 10 + 30), MC_Colour(255, 255, 255), 1.0f, 1.0f);
 				}
