@@ -117,6 +117,9 @@
     <ClCompile Include="Client\Modules\PlayerFinder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Client\Modules\DVDScreensaver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDK\Minecraft.h">
@@ -270,6 +273,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Client\Modules\PlayerFinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Client\Modules\DVDScreensaver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

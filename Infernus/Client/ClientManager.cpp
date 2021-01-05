@@ -79,6 +79,7 @@ void ClientManager::InitCommands() {
 #include "Modules/ArrayList.h"
 #include "Modules/Clickgui.h"
 #include "Modules/PlayerFinder.h"
+#include "Modules/DVDScreensaver.h"
 /* World */
 #include "Modules/Instabreak.h"
 #include "Modules/Nuker.h"
@@ -116,6 +117,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Arraylist());
 	//Modules.push_back(new Clickgui());
 	Modules.push_back(new PlayerFinder());
+	Modules.push_back(new Screensaver());
 	/* World */
 	Modules.push_back(new Instabreak());
 	Modules.push_back(new Nuker());
