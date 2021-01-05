@@ -2,6 +2,8 @@
 
 void PlayerFinder::onGmTick() {
 	XD.clear();
+	XDD.clear();
+	XDDD.clear();
 	if (Player != nullptr) {
 		offsetCalc = *Player->getPos();
 		MultiPlayerLevel* entlist = Player->MultiPlayerLevel;
@@ -9,8 +11,11 @@ void PlayerFinder::onGmTick() {
 		if (size > 0 && size <= 5000) {
 			for (size_t I = 0; I < size; I++) {
 				Actor* currEnt = entlist->get(I);
-				if (currEnt != nullptr && currEnt != Player && currEnt->getFormattedNameTag().size() > 5) {
-					XD.push_back(currEnt);
+				currEnt->setNameTagVisible(true);
+				if (currEnt != nullptr && currEnt != Player && (currEnt->getFormattedNameTag().size() > 5)) {
+					XD.push_back(*currEnt->getPos());
+					XDD.push_back(currEnt->getFormattedNameTag());
+					XDDD.push_back(currEnt->getPos()->distance(offsetCalc));
 				}
 			}
 		}
@@ -19,11 +24,9 @@ void PlayerFinder::onGmTick() {
 
 void PlayerFinder::onRender() {
 	if (XD.size() > 0 && Minecraft::ClientInstance() != nullptr && Minecraft::ClientInstance()->MinecraftGame()->canUseKeys()) {
-		if (XD.size() > RenderEnt) sortstuff();
+		if (XD.size() >= RenderEnt) sortstuff();
 		for (int i = 0; i < min(XD.size(), RenderEnt); i++) {
-			if (XD.at(i) != nullptr) {
-				RenderUtils::RenderText(XD.at(i)->getFormattedNameTag() + (offset ? " [ X:" + std::to_string(int(offsetCalc.x - XD.at(i)->getPos()->x)) + ", Y:" + std::to_string(int(offsetCalc.y - XD.at(i)->getPos()->y)) + ", Z:" + std::to_string(int(offsetCalc.z - XD.at(i)->getPos()->z)) + " ]" : " [ X:" + std::to_string(int(XD.at(i)->getPos()->x)) + ", Y:" + std::to_string(int(XD.at(i)->getPos()->y)) + ", Z:" + std::to_string(int(XD.at(i)->getPos()->z)) + "]") + (BPS ? std::to_string(float(XD.at(i)->getPos()->distance(*XD.at(i)->getPosOld()))) + "bps" : ""), Vec2(10, 60 + i * 10 + 30), MC_Colour(255, 255, 255), 1.0f, 1.0f);
-			}
+			RenderUtils::RenderText(XDD.at(i) + (offset ? " [X:" + std::to_string(int(offsetCalc.x - XD.at(i).x)) + ", Y:" + std::to_string(int(offsetCalc.y - XD.at(i).y)) + ", Z:" + std::to_string(int(offsetCalc.z - XD.at(i).z)) + "]" : " [X:" + std::to_string(int(XD.at(i).x)) + ", Y:" + std::to_string(int(XD.at(i).y)) + ", Z:" + std::to_string(int(XD.at(i).z)) + "]"), Vec2(10, 60 + i * 10 + 30), MC_Colour(255, 255, 255), 1.0f, 1.0f);
 		}
 	}
 }
@@ -33,10 +36,18 @@ void PlayerFinder::sortstuff() {
 	while (changed) {
 		changed = false;
 		for (int i = 0; i < XD.size() - 1; i++) {
-			if (XD.at(i)->getPos()->distance(offsetCalc) > XD.at(i + 1)->getPos()->distance(offsetCalc)) {
-				Actor* tmp = XD.at(i);
+			if (XDDD.at(i) > XDDD.at(i + 1)) {
+				Vec3 tmp1 = XD.at(i);
 				XD.at(i) = XD.at(i + 1);
-				XD.at(i + 1) = tmp;
+				XD.at(i + 1) = tmp1;
+
+				std::string tmp2 = XDD.at(i);
+				XDD.at(i) = XDD.at(i + 1);
+				XDD.at(i + 1) = tmp2;
+
+				int tmp3 = XDDD.at(i);
+				XDDD.at(i) = XDDD.at(i + 1);
+				XDDD.at(i + 1) = tmp3;
 				changed = true;
 			}
 		}
