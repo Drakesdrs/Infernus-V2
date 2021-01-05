@@ -8,6 +8,11 @@ public:
     void onGmTick();
     void onRender();
 private:
-    std::vector<Vec3> XD;
-    std::vector<std::string> XDD;
+    void sortstuff();
+    std::vector<Actor*> XD;
+    Vec3 offsetCalc;
+    //
+    int RenderEnt = 5; //how many entites to show at once (from closest)
+    bool offset = true; //instead of position show the relative position
+    bool BPS = true; //show Block Per Second of the entity;
 };
