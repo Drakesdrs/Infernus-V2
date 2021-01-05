@@ -9,7 +9,7 @@ private:
     bool BPS = true;
     bool Position = true;
     bool Entities = true;
-        bool FilterEntites = true; // part of the entites thingy
+    bool FilterEntites = true;
     //
     std::vector<std::string> stuffToRender;
     float bps = 0.0f;

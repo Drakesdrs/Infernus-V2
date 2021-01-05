@@ -44,7 +44,7 @@ void info::onRender() {
 	if (Minecraft::ClientInstance() != nullptr && stuffToRender.size() > 0) {
 		Vec2 xdhahaha = Minecraft::ClientInstance()->GuiData()->ScaledResolution;
 		for (int i = 0; i < stuffToRender.size(); i++) {
-			RenderUtils::RenderText(stuffToRender.at(i), Vec2(200, 200 + i * 10), MC_Colour(255, 255, 255), 1, 1);
+			RenderUtils::RenderText(stuffToRender.at(i), Vec2(1, xdhahaha.y - stuffToRender.size() * 10 + i * 10 + 1), MC_Colour(255, 255, 255), 1, 1);
 		}
 	}
 }
