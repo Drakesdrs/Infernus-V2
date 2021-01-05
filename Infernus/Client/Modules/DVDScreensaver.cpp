@@ -1,9 +1,5 @@
 #include "DVDScreensaver.h"
 
-
-void Screensaver::onGmTick() {
-}
-
 void Screensaver::onRender() {
 	if (Minecraft::ClientInstance() != nullptr) {
 		Position.x += Velocity.x / dividerr;
