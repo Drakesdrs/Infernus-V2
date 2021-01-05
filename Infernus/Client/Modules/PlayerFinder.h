@@ -5,6 +5,9 @@ class PlayerFinder :
 {
 public:
     PlayerFinder() : Module::Module("PlayerFinder", "Visuals", "Find Players' coordinates.") {};
+    void onGmTick();
     void onRender();
+private:
+    std::vector<Vec3> XD;
+    std::vector<std::string> XDD;
 };
-

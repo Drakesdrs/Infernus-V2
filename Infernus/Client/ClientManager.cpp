@@ -114,7 +114,7 @@ void ClientManager::InitModules() {
 	/* Visuals */
 	Modules.push_back(new TabGUI());
 	Modules.push_back(new Arraylist());
-	Modules.push_back(new Clickgui());
+	//Modules.push_back(new Clickgui());
 	Modules.push_back(new PlayerFinder());
 	/* World */
 	Modules.push_back(new Instabreak());

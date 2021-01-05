@@ -160,7 +160,6 @@
     <ClCompile Include="Client\Modules\AirJump.cpp" />
     <ClCompile Include="Client\Modules\ArrayList.cpp" />
     <ClCompile Include="Client\Modules\AutoSprint.cpp" />
-    <ClCompile Include="Client\Modules\Clickgui.cpp" />
     <ClCompile Include="Client\Modules\ClickTP.cpp" />
     <ClCompile Include="Client\Modules\CubecraftFly.cpp" />
     <ClCompile Include="Client\Modules\Fly.cpp" />
@@ -205,7 +204,6 @@
     <ClInclude Include="Client\Modules\ArrayList.h" />
     <ClInclude Include="Client\Modules\AutoSprint.h" />
     <ClInclude Include="Client\Modules\ClickTP.h" />
-    <ClInclude Include="Client\Modules\Clickgui.h" />
     <ClInclude Include="Client\Modules\CubecraftFly.h" />
     <ClInclude Include="Client\Modules\Fly.h" />
     <ClInclude Include="Client\Modules\Freecam.h" />

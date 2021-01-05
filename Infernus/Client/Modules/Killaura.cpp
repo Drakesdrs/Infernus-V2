@@ -16,7 +16,7 @@ void Killaura::onGmTick() {
 					for (auto Friend : Minecraft::Friends) {
 						if (currEnt->getFormattedNameTag() == Friend) isFriend = true;
 					}
-					if (!isFriend && currEnt->isAlive() /*&& ((currEnt->getPos()->x != currEnt->getPosOld()->x) && (currEnt->getPos()->z != currEnt->getPosOld()->z))*/) {
+					if (!isFriend && currEnt->isAlive() && currEnt->getFormattedNameTag().size() > 5/*&& ((currEnt->getPos()->x != currEnt->getPosOld()->x) && (currEnt->getPos()->z != currEnt->getPosOld()->z))*/) {
 						//sync rotation and position before attacking to prevent killaura kicks, aps needs to be about 10
 						auto jMod = ClientManager::GetModuleByName("HiveDisabler"); if (jMod != nullptr && jMod->isEnabled) { jMod->onGmTick(); }
 						GM->attack(currEnt);

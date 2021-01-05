@@ -20,7 +20,7 @@ void TargetStrafe::onGmTick() {
 					for (auto Friend : Minecraft::Friends) {
 						if (currEnt->getFormattedNameTag() == Friend) isFriend = true;
 					}
-					if (!isFriend && currEnt->isAlive() /*&& ((currEnt->getPos()->x != currEnt->getPosOld()->x) && (currEnt->getPos()->z != currEnt->getPosOld()->z))*/) {
+					if (!isFriend && currEnt->isAlive() && currEnt->getFormattedNameTag().size() > 5 /*&& ((currEnt->getPos()->x != currEnt->getPosOld()->x) && (currEnt->getPos()->z != currEnt->getPosOld()->z))*/) {
 						if (distanc > distance) {
 							distanc = distance;
 							EntPos = *currEnt->getPos();

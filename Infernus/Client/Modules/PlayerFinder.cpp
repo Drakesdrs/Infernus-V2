@@ -1,22 +1,28 @@
 #include "PlayerFinder.h"
-#include <sstream>
 
-void PlayerFinder::onRender() {
-	if(Player != nullptr){	
-		MultiPlayerLevel* entlist = Player->MultiPlayerLevel;		
+void PlayerFinder::onGmTick() {
+	XD.clear();
+	XDD.clear();
+	if (Player != nullptr) {
+		MultiPlayerLevel* entlist = Player->MultiPlayerLevel;
 		size_t size = entlist->getListSize();
 		if (size > 0 && size <= 5000) {
 			for (size_t I = 0; I < size; I++) {
-				Actor* currPlayer = entlist->get(I);
-				if (currPlayer != nullptr && currPlayer != Player) {
-					std::string xpos = std::to_string(currPlayer->getPos()->x);
-					std::string ypos = std::to_string(currPlayer->getPos()->y);
-					std::string zpos = std::to_string(currPlayer->getPos()->z);
-					RenderUtils::RenderText("x: " + xpos + " y: " + ypos + " z: " + zpos, Vec2(10.2, 60.2 + I * 10 + 30), MC_Colour(100, 100, 100), 1.0f, 1.0f);
-					RenderUtils::RenderText("x: " + xpos + " y: " + ypos +  " z: " + zpos, Vec2(10, 60 + I * 10 + 30), MC_Colour(255, 255, 255), 1.0f, 1.0f);
-
+				Actor* currEnt = entlist->get(I);
+				if (currEnt != nullptr && currEnt != Player && currEnt->getFormattedNameTag().size() > 5) {
+					XD.push_back(Vec3(floor(currEnt->getPos()->x), floor(currEnt->getPos()->y), floor(currEnt->getPos()->z)));
+					XDD.push_back(currEnt->getFormattedNameTag());
 				}
 			}
+		}
+	}
+}
+	
+
+void PlayerFinder::onRender() {
+	if (XD.size() > 0) {
+		for (size_t i = 0; i < XD.size(); i++) {
+			RenderUtils::RenderText(XDD.at(i) + " x: " + std::to_string(int(XD.at(i).x)) + " y: " + std::to_string(int(XD.at(i).y)) + " z: " + std::to_string(int(XD.at(i).x)), Vec2(10, 60 + i * 10 + 30), MC_Colour(255, 255, 255), 1.0f, 1.0f);
 		}
 	}
 }
