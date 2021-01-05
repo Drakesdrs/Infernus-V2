@@ -205,53 +205,26 @@ bool ClientManager::handleCommand(std::string input) {
 }
 
 void ClientManager::InitModuleFiles() {
-	Utils::CreateDir("Infernus/Modules");
+	try {
+		Utils::CreateDir("Infernus/Modules");
 
-	/* JSON Data */
+		/* JSON Data */
 
-	std::string infernusPath = getenv("APPDATA") + std::string(R"(\..\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\Infernus)");
+		std::string infernusPath = getenv("APPDATA") + std::string(R"(\..\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\Infernus)");
 
-	Utils::DebugLogOutput("Preparing Module Data");
-	std::string path = std::string(infernusPath + "\\Modules\\Modules.json");
+		Utils::DebugLogOutput("Preparing Module Data");
+		std::string path = std::string(infernusPath + "\\Modules\\Modules.json");
 
-	if (!Utils::doesPathExist(path)) {
-		CloseHandle(CreateFileA(path.c_str(), GENERIC_WRITE | GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr));
-		JSON json = JSON::object();
-		for (auto Module : ClientManager::Modules) {
-			json[Module->name] = {
-				{"Toggle", Module->isEnabled},
-				{"State", Module->State},
-				{"Key", Module->key}
-			};
-		}
-		std::ofstream File;
-		File.open(path, std::ofstream::trunc);
-		if (File.is_open()) {
-			File << json.dump();
-		}
-		File.close();
-	}
-	else {
-		std::ifstream File(path);
-		JSON json = JSON::parse(File);
-		bool update = false;
-		for (auto Module : Modules) {
-			JSON data = json[Module->name];
-			if (!data.is_null() && !data["Toggle"].is_null() && !data["State"].is_null() && !data["Key"].is_null()) {
-				Module->isEnabled = data["Toggle"].get<bool>();
-				Module->State = data["State"].get<std::string>();
-				Module->key = data["Key"].get<uint64_t>();
-			}
-			else {
+		if (!Utils::doesPathExist(path)) {
+			CloseHandle(CreateFileA(path.c_str(), GENERIC_WRITE | GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr));
+			JSON json = JSON::object();
+			for (auto Module : ClientManager::Modules) {
 				json[Module->name] = {
 					{"Toggle", Module->isEnabled},
 					{"State", Module->State},
 					{"Key", Module->key}
 				};
-				update = true;
 			}
-		}
-		if (update) {
 			std::ofstream File;
 			File.open(path, std::ofstream::trunc);
 			if (File.is_open()) {
@@ -259,8 +232,40 @@ void ClientManager::InitModuleFiles() {
 			}
 			File.close();
 		}
+		else {
+			std::ifstream File(path);
+			JSON json = JSON::parse(File);
+			bool update = false;
+			for (auto Module : Modules) {
+				JSON data = json[Module->name];
+				if (!data.is_null() && !data["Toggle"].is_null() && !data["State"].is_null() && !data["Key"].is_null()) {
+					Module->isEnabled = data["Toggle"].get<bool>();
+					Module->State = data["State"].get<std::string>();
+					Module->key = data["Key"].get<uint64_t>();
+				}
+				else {
+					json[Module->name] = {
+						{"Toggle", Module->isEnabled},
+						{"State", Module->State},
+						{"Key", Module->key}
+					};
+					update = true;
+				}
+			}
+			if (update) {
+				std::ofstream File;
+				File.open(path, std::ofstream::trunc);
+				if (File.is_open()) {
+					File << json.dump();
+				}
+				File.close();
+			}
+		}
+		return;
 	}
-	return;
+	catch (std::exception e) {
+		Utils::DebugLogOutput("There was an error when initializing JSON Data!");
+	}
 }
 
 void ClientManager::UpdateModuleData(Module* Mod) {
