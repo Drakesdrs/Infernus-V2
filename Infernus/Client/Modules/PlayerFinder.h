@@ -9,10 +9,11 @@ public:
     void onRender();
 private:
     void sortstuff();
-    std::vector<Actor*> XD;
+    std::vector<Vec3> XD;
+    std::vector<std::string> XDD;
+    std::vector<int> XDDD;
     Vec3 offsetCalc;
     //
     int RenderEnt = 5; //how many entites to show at once (from closest)
     bool offset = true; //instead of position show the relative position
-    bool BPS = true; //show Block Per Second of the entity;
 };
