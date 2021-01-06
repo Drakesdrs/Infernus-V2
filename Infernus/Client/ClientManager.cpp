@@ -80,6 +80,7 @@ void ClientManager::InitCommands() {
 #include "Modules/Clickgui.h"
 #include "Modules/PlayerFinder.h"
 #include "Modules/Keystrokes.h"
+#include "Modules/DVDScreensaver.h"
 /* World */
 #include "Modules/Instabreak.h"
 #include "Modules/Nuker.h"
@@ -116,6 +117,7 @@ void ClientManager::InitModules() {
 	Modules.push_back(new TabGUI());
 	Modules.push_back(new Arraylist());
 	Modules.push_back(new Keystrokes());
+	Modules.push_back(new Screensaver);
 	//Modules.push_back(new Clickgui());
 	Modules.push_back(new PlayerFinder());
 	/* World */
