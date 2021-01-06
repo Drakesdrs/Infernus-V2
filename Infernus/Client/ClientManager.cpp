@@ -79,6 +79,7 @@ void ClientManager::InitCommands() {
 #include "Modules/ArrayList.h"
 #include "Modules/Clickgui.h"
 #include "Modules/PlayerFinder.h"
+#include "Modules/Keystrokes.h"
 /* World */
 #include "Modules/Instabreak.h"
 #include "Modules/Nuker.h"
@@ -114,6 +115,7 @@ void ClientManager::InitModules() {
 	/* Visuals */
 	Modules.push_back(new TabGUI());
 	Modules.push_back(new Arraylist());
+	Modules.push_back(new Keystrokes());
 	//Modules.push_back(new Clickgui());
 	Modules.push_back(new PlayerFinder());
 	/* World */
