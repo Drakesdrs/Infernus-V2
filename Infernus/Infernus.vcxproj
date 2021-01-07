@@ -185,6 +185,7 @@
     <ClCompile Include="Client\Commands\ColorCommand.cpp" />
     <ClCompile Include="Client\Modules\Velocity.cpp" />
     <ClCompile Include="Client\Modules\PlayerFinder.cpp" />
+    <ClCompile Include="Client\Modules\FastPlace.cpp" />
     <ClCompile Include="Infernus.cpp" />
     <ClCompile Include="Client\Modules\Keystrokes.cpp" />
     <ClCompile Include="Other\Module.cpp" />
@@ -232,6 +233,7 @@
     <ClInclude Include="Client\Modules\Velocity.h" />
     <ClInclude Include="Client\Modules\PlayerFinder.h" />
     <ClInclude Include="Client\Modules\Keystrokes.h" />
+    <ClInclude Include="Client\Modules\FastPlace.h" />
     <ClInclude Include="Other\Module.h" />
     <ClInclude Include="Other\Utils.h" />
     <ClInclude Include="SDK\Classes\Actor.h" />
