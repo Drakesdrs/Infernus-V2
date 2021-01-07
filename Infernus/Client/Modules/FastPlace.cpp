@@ -1,13 +1,20 @@
 #include"FastPlace.h"
 
 void FastPlace::onMouse(char action, bool isDown, bool* cancel) {
-	GameMode* GM = Minecraft::GameMode();
-	MultiPlayerLevel* Level = Player->MultiPlayerLevel;
-	Vec3_i blockPos = Level->facingBlockPos;
-	auto blockFace = Level->blockFace;
-	while (action == 2 && isDown) 
-	if(Player != nullptr)
-		GM->buildBlock(&blockPos, blockFace);
-		Sleep(100);
-	
+	if (action == 2 && isDown)
+		MouseDown = true;
+	else 
+		MouseDown = false;
+}
+
+void FastPlace::onGmTick() {
+	if (MouseDown) {
+		if (Player != nullptr && Minecraft::GameMode() && Player->MultiPlayerLevel != nullptr) {
+			GameMode* GM = Minecraft::GameMode();
+			MultiPlayerLevel* Level = Player->MultiPlayerLevel;
+			Vec3_i blockPos = Level->facingBlockPos;
+			auto blockFace = Level->blockFace;
+			GM->buildBlock(&blockPos, blockFace);
+		}
+	}
 }
