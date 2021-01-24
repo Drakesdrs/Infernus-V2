@@ -137,8 +137,6 @@ void ClientManager::InitModules() {
 	Modules.push_back(new Spammer());
 	Modules.push_back(new Uninject());
 
-	InitModuleFiles();
-
 	for (auto & Module : Modules) { //Initialize Categories
 		bool exists = false;
 		for (const auto& currCategory : Categories) {
@@ -148,6 +146,8 @@ void ClientManager::InitModules() {
 			Categories.push_back(Module->category);
 		}
 	}
+
+	InitModuleFiles();
 
 	for (;;) {
 		for (int I = 0; I < Modules.size(); I++) { //Loop Modules
