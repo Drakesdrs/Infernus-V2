@@ -11,9 +11,11 @@ if(MSVC)
     )
 endif()
 
-link_directories(minhook/build/Release)
+link_directories(minhook/Release)
 
 add_library(Infernus_V2 SHARED
+        Infernus/Client/Commands/ColorCommand.cpp
+        Infernus/Client/Commands/ColorCommand.h
         Infernus/Client/Commands/SpamCommand.cpp
         Infernus/Client/Commands/SpamCommand.h
         Infernus/Client/Commands/SpeedCommand.cpp
@@ -71,6 +73,24 @@ add_library(Infernus_V2 SHARED
         Infernus/Client/Modules/Velocity.h
         Infernus/Client/Modules/Uninject.cpp
         Infernus/Client/Modules/Uninject.h
+        Infernus/Client/Modules/TargetStrafe.h
+        Infernus/Client/Modules/TargetStrafe.cpp
+        Infernus/Client/Modules/AutoWalk.h
+        Infernus/Client/Modules/AutoWalk.cpp
+        Infernus/Client/Modules/PlayerFinder.h
+        Infernus/Client/Modules/PlayerFinder.cpp
+        Infernus/Client/Modules/Keystrokes.h
+        Infernus/Client/Modules/Keystrokes.cpp
+        Infernus/Client/Modules/FastPlace.h
+        Infernus/Client/Modules/FastPlace.cpp
+        Infernus/Client/Modules/HiveDisabler.h
+        Infernus/Client/Modules/HiveDisabler.cpp
+        Infernus/Client/Modules/CubecraftFly.h
+        Infernus/Client/Modules/CubecraftFly.cpp
+        Infernus/Client/Modules/DVDScreensaver.h
+        Infernus/Client/Modules/DVDScreensaver.cpp
+        Infernus/Client/Modules/hudstuff.h
+        Infernus/Client/Modules/hudstuff.cpp
         Infernus/Client/ClientManager.cpp
         Infernus/Client/ClientManager.h
         Infernus/Other/Module.cpp
