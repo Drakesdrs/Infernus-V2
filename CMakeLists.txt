@@ -63,8 +63,8 @@ add_library(Infernus_V2 SHARED
         Infernus/Client/Modules/TestModule.h
         Infernus/Client/Modules/Triggerbot.cpp
         Infernus/Client/Modules/Triggerbot.h
-        Infernus/Client/Modules/MemeplexDisablerxd.cpp
-        Infernus/Client/Modules/MemeplexDisablerxd.h
+        Infernus/Client/Modules/MineplexDisabler.cpp
+        Infernus/Client/Modules/MineplexDisabler.h
         Infernus/Client/Modules/Fly.cpp
         Infernus/Client/Modules/Fly.h
         Infernus/Client/Modules/Velocity.cpp
@@ -90,4 +90,7 @@ add_library(Infernus_V2 SHARED
         Infernus/Infernus.cpp)
 
 target_link_libraries(Infernus_V2 PRIVATE minhook.x64)
-target_include_directories(Infernus_V2 PRIVATE minhook/include)
+target_include_directories(Infernus_V2 PRIVATE 
+        minhook/include
+        packages/nlohmann.json.3.9.1/build/native/include
+)
