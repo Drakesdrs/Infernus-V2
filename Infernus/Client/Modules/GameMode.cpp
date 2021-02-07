@@ -1,20 +1,20 @@
 #include "GameMode.h"
 
-void GameMode::onEnable() {
+void Gamemode::onEnable() {
 	if (this->Player != nullptr) {
 		this->savedGM = this->Player->getGameType();
 	}
 	else this->isEnabled = false;
 }
 
-void GameMode::onGmTick() {
+void Gamemode::onGmTick() {
 	if (this->Player != nullptr) {
 		this->Player->setPlayerGameType(this->GM);
 	}
 	else this->isEnabled = false;
 }
 
-void GameMode::onDisable() {
+void Gamemode::onDisable() {
 	if (this->Player != nullptr) {
 		this->Player->setPlayerGameType(this->savedGM);
 	}
