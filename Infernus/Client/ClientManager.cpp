@@ -118,7 +118,7 @@ void ClientManager::InitModules() {
 	/* Player */
 	Modules.push_back(new ClickTP());
 	Modules.push_back(new Velocity());
-	Modules.push_back(new GameMode());
+	Modules.push_back(new Gamemode());
 	/* Visuals */
 	Modules.push_back(new TabGUI());
 	Modules.push_back(new Arraylist());
