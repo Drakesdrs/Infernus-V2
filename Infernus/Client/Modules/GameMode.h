@@ -1,9 +1,9 @@
 #pragma once
 #include "../../Other/Module.h"
 
-class GameMode : public Module {
+class Gamemode : public Module {
 public:
-	GameMode() : Module::Module("GameMode", "Player", "Change your GameMode") {};
+	Gamemode() : Module::Module("GameMode", "Player", "Change your GameMode") {};
 	void onEnable();
 	void onGmTick();
 	void onDisable();
