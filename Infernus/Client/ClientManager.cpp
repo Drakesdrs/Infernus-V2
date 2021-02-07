@@ -76,6 +76,7 @@ void ClientManager::InitCommands() {
 /* Player */
 #include "Modules/ClickTP.h"
 #include "Modules/Velocity.h"
+#include "Modules/GameMode.h"
 /* Visuals */
 #include "Modules/TabGUI.h"
 #include "Modules/ArrayList.h"
@@ -117,6 +118,7 @@ void ClientManager::InitModules() {
 	/* Player */
 	Modules.push_back(new ClickTP());
 	Modules.push_back(new Velocity());
+	Modules.push_back(new GameMode());
 	/* Visuals */
 	Modules.push_back(new TabGUI());
 	Modules.push_back(new Arraylist());

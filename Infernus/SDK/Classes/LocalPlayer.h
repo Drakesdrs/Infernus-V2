@@ -174,7 +174,13 @@ private: virtual void Function430();
 private: virtual void Function431();
 private: virtual void Function432();
 
+	public:
+
 	   bool inventoryOpen() {
 		   return *reinterpret_cast<int*>(reinterpret_cast<uintptr_t>(this) + 0x1110) > 1;
+	   }
+
+	   int getGameType() {
+		   return this->isCreative() || this->isAdventure() ? this->isCreative() ? 1 : 2 : 0;
 	   }
 };

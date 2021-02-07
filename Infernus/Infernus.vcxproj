@@ -167,6 +167,7 @@
     <ClCompile Include="Client\Modules\DVDScreensaver.cpp" />
     <ClCompile Include="Client\Modules\Fly.cpp" />
     <ClCompile Include="Client\Modules\Freecam.cpp" />
+    <ClCompile Include="Client\Modules\GameMode.cpp" />
     <ClCompile Include="Client\Modules\Hitbox.cpp" />
     <ClCompile Include="Client\Modules\HiveDisabler.cpp" />
     <ClCompile Include="Client\Modules\HudStuff.cpp" />
@@ -216,6 +217,7 @@
     <ClInclude Include="Client\Modules\DVDScreensaver.h" />
     <ClInclude Include="Client\Modules\Fly.h" />
     <ClInclude Include="Client\Modules\Freecam.h" />
+    <ClInclude Include="Client\Modules\GameMode.h" />
     <ClInclude Include="Client\Modules\Hitbox.h" />
     <ClInclude Include="Client\Modules\HiveDisabler.h" />
     <ClInclude Include="Client\Modules\HudStuff.h" />
